@@ -13,23 +13,38 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0015 0%, #1a0033 25%, #2d1b69 50%, #8b5a9f 75%, #ff6b9d 100%);
-            background-attachment: fixed;
+            background: #0a0015;
             color: #ffffff;
             overflow-x: hidden;
-            cursor: none;
+            position: relative;
         }
 
-        .cursor-glow {
+        .animated-background {
             position: fixed;
-            width: 300px;
-            height: 300px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.8) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.6) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255, 107, 157, 0.7) 0%, transparent 50%),
+                        linear-gradient(135deg, #0a0015 0%, #1a0033 25%, #2d1b69 50%, #8b5a9f 75%, #ff6b9d 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .cursor-influence {
+            position: fixed;
+            width: 600px;
+            height: 600px;
             background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, rgba(255, 107, 157, 0.1) 30%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
-            z-index: 9999;
+            z-index: 1;
             transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+            mix-blend-mode: screen;
         }
 
         .navbar {
@@ -118,7 +133,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            z-index: 2;
         }
 
         .hero-content {
@@ -169,6 +184,7 @@
             padding: 6rem 2rem;
             background: rgba(0, 0, 0, 0.3);
             position: relative;
+            z-index: 2;
         }
 
         .container {
@@ -235,6 +251,21 @@
             }
         }
 
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 100% 50%;
+            }
+            50% {
+                background-position: 50% 100%;
+            }
+            75% {
+                background-position: 50% 0%;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 gap: 1rem;
@@ -260,19 +291,20 @@
     </style>
 </head>
 <body>
+    <div class="animated-background"></div>
+    <div class="cursor-influence"></div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <h2>Marc F.</h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="case-studies.html">Case Studies</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="amazon-updates.html">Amazon Updates</a></li>
                 <li><a href="book-a-call.html" class="cta-button">Book a Call</a></li>
             </ul>
         </div>
@@ -308,24 +340,41 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cursorGlow = document.createElement('div');
-            cursorGlow.className = 'cursor-glow';
-            document.body.appendChild(cursorGlow);
+            const cursorInfluence = document.querySelector('.cursor-influence');
+            const animatedBg = document.querySelector('.animated-background');
 
             document.addEventListener('mousemove', function(e) {
-                cursorGlow.style.left = e.clientX + 'px';
-                cursorGlow.style.top = e.clientY + 'px';
+                const x = e.clientX;
+                const y = e.clientY;
+                
+                // Update cursor influence position
+                cursorInfluence.style.left = x + 'px';
+                cursorInfluence.style.top = y + 'px';
+                
+                // Influence the animated background
+                const xPercent = (x / window.innerWidth) * 100;
+                const yPercent = (y / window.innerHeight) * 100;
+                
+                animatedBg.style.background = `
+                    radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(138, 43, 226, 0.8) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.6) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 80%, rgba(255, 107, 157, 0.7) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0015 0%, #1a0033 25%, #2d1b69 50%, #8b5a9f 75%, #ff6b9d 100%)
+                `;
             });
 
+            // Enhanced hover effects for interactive elements
             const interactiveElements = document.querySelectorAll('a, button, .service-card');
             
             interactiveElements.forEach(element => {
                 element.addEventListener('mouseenter', function() {
-                    cursorGlow.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorInfluence.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorInfluence.style.opacity = '0.8';
                 });
 
                 element.addEventListener('mouseleave', function() {
-                    cursorGlow.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorInfluence.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorInfluence.style.opacity = '1';
                 });
             });
         });
