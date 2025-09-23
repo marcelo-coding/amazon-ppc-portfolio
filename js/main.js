@@ -1,277 +1,712 @@
-// Marc PPC Developer - Main JavaScript File
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a2332;
+    color: #ffffff;
+    line-height: 1.6;
+}
 
-    // Form submission handling
-    const heroForm = document.querySelector('.hero-form form');
-    if (heroForm) {
-        heroForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            
-            // Convert FormData to object
-            for (let [key, value] of formData.entries()) {
-                formObject[key] = value;
-            }
-            
-            // Basic form validation
-            const requiredFields = ['firstName', 'lastName', 'email'];
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                const input = this.querySelector(`input[name="${field}"]`);
-                if (input && !input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = '#ff4757';
-                } else if (input) {
-                    input.style.borderColor = '#ddd';
-                }
-            });
-            
-            if (isValid) {
-                // Show success message (you can replace this with actual form submission)
-                showNotification('Thank you! We\'ll contact you soon.', 'success');
-                this.reset();
-            } else {
-                showNotification('Please fill in all required fields.', 'error');
-            }
-        });
-    }
+/* Top Banner */
+.top-banner {
+    background: linear-gradient(90deg, #00d4aa, #0099cc);
+    padding: 8px 0;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
 
-    // Service card hover effects
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-    });
+/* Header */
+.header {
+    background: #1a2332;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a3441;
+}
 
-    // Pillar hover effects
-    const pillars = document.querySelectorAll('.pillar');
-    pillars.forEach(pillar => {
-        pillar.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 10px 30px rgba(0, 212, 170, 0.2)';
-        });
-        
-        pillar.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = 'none';
-        });
-    });
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-    // Scroll to top functionality
-    const scrollToTopBtn = createScrollToTopButton();
-    document.body.appendChild(scrollToTopBtn);
+.logo {
+    display: flex;
+    align-items: center;
+}
 
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.style.display = 'block';
-        } else {
-            scrollToTopBtn.style.display = 'none';
-        }
-    });
+.logo-img {
+    height: 40px;
+    width: auto;
+}
 
-    // Mobile menu toggle (for future mobile menu implementation)
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    }
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
 
-    // Lazy loading for images
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
+.nav-menu li a {
+    color: #b8c5d1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
-    images.forEach(img => imageObserver.observe(img));
+.nav-menu li a:hover {
+    color: #00d4aa;
+}
 
-    // Analytics tracking for buttons (you can integrate with Google Analytics)
-    const trackingButtons = document.querySelectorAll('.cta-btn, .submit-btn, .cta-banner-btn');
-    trackingButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const buttonText = this.textContent.trim();
-            console.log(`Button clicked: ${buttonText}`);
-            // Example: gtag('event', 'click', { event_category: 'CTA', event_label: buttonText });
-        });
-    });
-});
+.cta-btn {
+    background: #00d4aa;
+    color: #1a2332;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
 
-// Utility function to create scroll to top button
-function createScrollToTopButton() {
-    const button = document.createElement('button');
-    button.innerHTML = '↑';
-    button.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #00d4aa;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        cursor: pointer;
+.cta-btn:hover {
+    background: #00b894;
+    transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    background: #1a2332;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="lines" patternUnits="userSpaceOnUse" width="50" height="50"><path d="M0,25 L50,25" stroke="%2300d4aa" stroke-width="0.5" opacity="0.1"/><path d="M25,0 L25,50" stroke="%2300d4aa" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23lines)"/></svg>') no-repeat;
+    background-size: cover;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.profile-photo {
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #00d4aa;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #b8c5d1;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.hero-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Calendly Widget Styles */
+.calendly-inline-widget {
+    width: 100% !important;
+    min-width: 320px !important;
+    height: 700px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.calendly-embed-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 !important;
+}
+
+.calendly-embed-container .calendly-inline-widget {
+    height: 750px !important;
+    min-width: 100% !important;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #00d4aa;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #00b894;
+}
+
+/* Value Proposition Section */
+.value-prop {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.value-prop-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.value-prop h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.value-prop h2 .highlight {
+    color: #00d4aa;
+}
+
+.value-prop-subtitle {
+    font-size: 18px;
+    color: #b8c5d1;
+    margin-bottom: 60px;
+}
+
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.pillar {
+    background: #243447;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border: 1px solid #2a3441;
+    transition: transform 0.3s;
+}
+
+.pillar:hover {
+    transform: translateY(-5px);
+    border-color: #00d4aa;
+}
+
+.pillar h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #00d4aa;
+}
+
+.pillar p {
+    color: #b8c5d1;
+    font-size: 14px;
+}
+
+/* Process Section */
+.process {
+    padding: 80px 0;
+    background: #243447;
+}
+
+.process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.process-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.process h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.process-text {
+    color: #b8c5d1;
+    margin-bottom: 30px;
+}
+
+.process-features {
+    list-style: none;
+}
+
+.process-features li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #b8c5d1;
+}
+
+.process-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00d4aa;
+    font-weight: bold;
+}
+
+.dashboard-mockup {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mockup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.mockup-title {
+    font-weight: 600;
+    color: #333;
+}
+
+.mockup-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.metric {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.metric-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00d4aa;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Services Grid */
+.services {
+    padding: 80px 0;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: #243447;
+    padding: 40px 30px;
+    border-radius: 10px;
+    border: 1px solid #2a3441;
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d4aa;
+    box-shadow: 0 10px 30px rgba(0, 212, 170, 0.1);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: #00d4aa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #b8c5d1;
+    font-size: 14px;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background: linear-gradient(135deg, #00d4aa, #0099cc);
+    padding: 60px 0;
+    text-align: center;
+    margin: 80px 0;
+}
+
+.cta-banner h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1a2332;
+}
+
+.cta-banner-btn {
+    background: #1a2332;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.cta-banner-btn:hover {
+    background: #243447;
+    transform: translateY(-2px);
+}
+
+/* Testimonial */
+.testimonial {
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+    padding: 80px 0;
+}
+
+.testimonial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.testimonial-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.revenue-badge {
+    position: absolute;
+    bottom: -10px;
+    background: #1a2332;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.testimonial-content {
+    color: #1a2332;
+}
+
+.testimonial-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: 600;
+}
+
+/* Blog Section */
+.blog {
+    padding: 80px 0;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.blog-card {
+    background: #243447;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-image {
+    height: 200px;
+    background: linear-gradient(135deg, #00d4aa, #0099cc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-card h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.blog-link {
+    color: #00d4aa;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background: #1a2332;
+    padding: 60px 0 30px;
+    border-top: 1px solid #2a3441;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #00d4aa;
+}
+
+.footer-section p {
+    color: #b8c5d1;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #b8c5d1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #00d4aa;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #2a3441;
+    color: #b8c5d1;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
         display: none;
-        z-index: 1000;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
-    `;
-    
-    button.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    button.addEventListener('mouseenter', function() {
-        this.style.background = '#00b894';
-        this.style.transform = 'translateY(-2px)';
-    });
-    
-    button.addEventListener('mouseleave', function() {
-        this.style.background = '#00d4aa';
-        this.style.transform = 'translateY(0)';
-    });
-    
-    return button;
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
-    
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    
-    const colors = {
-        success: '#00d4aa',
-        error: '#ff4757',
-        info: '#0099cc'
-    };
-    
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${colors[type]};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-        z-index: 1000;
-        font-weight: 500;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        animation: slideInRight 0.3s ease;
-    `;
-    
-    // Add slide-in animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    document.body.appendChild(notification);
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        notification.remove();
-    }, 5000);
-}
-
-// Form validation helpers
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-function validatePhone(phone) {
-    const re = /^[\d\s\-\+\(\)]+$/;
-    return re.test(phone) && phone.replace(/\D/g, '').length >= 10;
-}
-
-// Performance optimization - lazy load sections
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-// Observe sections for animations
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
-});
-
-// Add CSS for section animations
-const animationStyles = document.createElement('style');
-animationStyles.textContent = `
-    section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
     }
     
-    section.visible {
-        opacity: 1;
-        transform: translateY(0);
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
-    .hero {
-        opacity: 1;
-        transform: none;
+    .hero-content {
+        text-align: center;
     }
-`;
-document.head.appendChild(animationStyles);
+    
+    .hero-content h1 {
+        text-align: center;
+        font-size: 36px;
+    }
+    
+    .hero-content p {
+        text-align: center;
+    }
+    
+    .pillars {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .mockup-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .pillars {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mockup-metrics {
+        grid-template-columns: 1fr;
+    }
+}

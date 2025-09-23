@@ -146,9 +146,36 @@ body {
 
 .hero-form {
     background: #ffffff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Calendly Widget Styles */
+.calendly-inline-widget {
+    width: 100% !important;
+    min-width: 320px !important;
+    height: 700px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.calendly-embed-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 !important;
+}
+
+.calendly-embed-container .calendly-inline-widget {
+    height: 750px !important;
+    min-width: 100% !important;
 }
 
 .form-row {
