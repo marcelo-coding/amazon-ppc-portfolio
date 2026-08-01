@@ -45,7 +45,7 @@
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("in");
+            entry.target.classList.add("visible");
             io.unobserve(entry.target);
           }
         });
@@ -53,19 +53,13 @@
       { threshold: 0.15 }
     );
 
-    /* Stagger siblings that share a parent grid, capped at 320ms. */
-    var groups = new Map();
+    /* Sibling stagger is handled in CSS via nth-child transition delays. */
     revealEls.forEach(function (el) {
-      var parent = el.parentElement;
-      if (!groups.has(parent)) groups.set(parent, 0);
-      var index = groups.get(parent);
-      el.style.transitionDelay = Math.min(index * 80, 320) + "ms";
-      groups.set(parent, index + 1);
       io.observe(el);
     });
   } else {
     revealEls.forEach(function (el) {
-      el.classList.add("in");
+      el.classList.add("visible");
     });
   }
 
