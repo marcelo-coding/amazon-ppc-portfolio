@@ -122,7 +122,18 @@ p{max-width:65ch;}
   gap:16px;
 }
 
-.nav-logo img{height:36px;width:auto;display:block;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo:hover{text-decoration:none;}
+.nav-logo img{height:34px;width:auto;display:block;}
+.logo-text{
+  font-weight:800;
+  font-size:1.2rem;
+  letter-spacing:.03em;
+  color:var(--white);
+  line-height:1;
+  white-space:nowrap;
+}
+.logo-ppc{color:var(--orange);}
 
 .nav-links{
   display:flex;
@@ -271,6 +282,7 @@ p{max-width:65ch;}
 
 .cal-card{
   position:relative;
+  overflow:hidden;
   background:rgba(255,255,255,.06);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
@@ -356,6 +368,37 @@ p{max-width:65ch;}
 .section-head .lede{color:var(--muted);margin-top:12px;font-size:1.05rem;}
 .section-dark .section-head .lede{color:var(--text-dark-muted);}
 
+/* ---------------- Credentials bar ---------------- */
+
+.cred-bar{
+  background:var(--navy);
+  border-top:1px solid var(--line-dark);
+  border-bottom:1px solid var(--line-dark);
+}
+.cred-inner{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px 32px;
+  padding-top:18px;
+  padding-bottom:18px;
+}
+.cred-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:rgba(255,255,255,.85);
+  font-size:.92rem;
+  font-weight:600;
+}
+.cred-item svg{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  color:var(--orange);
+}
+
 /* ---------------- Stat band ---------------- */
 
 .stats-grid{
@@ -363,6 +406,18 @@ p{max-width:65ch;}
   grid-template-columns:repeat(4,1fr);
   gap:32px;
 }
+.stat-icon{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  background:var(--orange-soft);
+  color:var(--orange);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:14px;
+}
+.stat-icon svg{width:22px;height:22px;}
 .stat .num{
   font-size:clamp(2.5rem,5vw,3.5rem);
   font-weight:800;
@@ -437,6 +492,74 @@ p{max-width:65ch;}
   justify-content:center;
   font-size:22px;
   margin-bottom:16px;
+}
+
+/* ---------------- Process timeline ---------------- */
+
+.process-track{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(210px,1fr));
+  gap:0 20px;
+  overflow-x:auto;
+  padding-bottom:12px;
+}
+.process-step{
+  position:relative;
+  min-width:0;
+}
+.process-step .step-num{
+  position:relative;
+  z-index:2;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--orange);
+  color:var(--navy-deep);
+  font-weight:800;
+  font-size:1.05rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  box-shadow:0 0 0 6px var(--orange-soft);
+}
+.process-step::before{
+  content:"";
+  position:absolute;
+  top:22px;
+  left:52px;
+  right:-20px;
+  height:2px;
+  background:rgba(255,153,0,.35);
+}
+.process-step:last-child::before{display:none;}
+.process-step h3{font-size:1.02rem;margin-bottom:8px;}
+.process-step p{color:var(--muted);font-size:.92rem;}
+
+/* ---------------- Brands strip ---------------- */
+
+.brands-band{padding-top:56px;padding-bottom:56px;}
+.brands-band .section-head{margin-bottom:28px;}
+.brand-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.brand-chip{
+  display:inline-block;
+  font-size:.92rem;
+  font-weight:600;
+  color:var(--navy);
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 18px;
+  box-shadow:0 1px 3px rgba(35,47,62,.06);
+  transition:border-color .2s ease, transform .2s ease;
+}
+.brand-chip:hover{
+  border-color:rgba(255,153,0,.5);
+  transform:translateY(-2px);
 }
 
 /* Case preview / blog preview cards */
@@ -568,7 +691,14 @@ p{max-width:65ch;}
   gap:40px;
   padding:64px 24px 48px;
 }
-.footer-grid img{height:34px;width:auto;margin-bottom:14px;}
+.footer-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.footer-logo:hover{text-decoration:none;}
+.footer-logo img{height:34px;width:auto;display:block;}
 .footer-grid h4{
   color:var(--white);
   font-size:.85rem;
@@ -615,6 +745,9 @@ p{max-width:65ch;}
 @media (max-width:860px){
   .cards-3,.cards-2{grid-template-columns:1fr;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .process-track{grid-template-columns:1fr;gap:28px 0;overflow-x:visible;}
+  .process-step::before{display:none;}
+  .cred-inner{flex-direction:column;align-items:flex-start;gap:10px;}
   .about-grid{grid-template-columns:1fr;gap:36px;}
   .about-photo{max-width:320px;}
   .footer-grid{grid-template-columns:1fr 1fr;padding:48px 24px 36px;}
