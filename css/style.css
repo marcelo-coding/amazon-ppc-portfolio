@@ -834,6 +834,89 @@ p{max-width:65ch;}
   font-weight:600;
 }
 
+/* ---------------- Article meta, data tables, insight quotes ---------------- */
+
+.page-meta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 14px;
+  color:rgba(255,255,255,.62);
+  font-size:.95rem;
+  margin-top:14px;
+}
+.page-meta strong{color:var(--orange);font-weight:600;}
+
+.post-meta{
+  color:var(--muted);
+  font-size:.92rem;
+  margin:0 0 24px;
+}
+
+.article h3{
+  font-size:1.25rem;
+  margin:34px 0 12px;
+  letter-spacing:-0.01em;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:0 0 26px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 1px 3px rgba(35,47,62,.06);
+}
+.data-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.94rem;
+  min-width:560px;
+}
+.data-table th{
+  background:var(--navy);
+  color:var(--white);
+  text-align:left;
+  padding:12px 16px;
+  font-size:.78rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  white-space:nowrap;
+}
+.data-table td{
+  padding:11px 16px;
+  border-top:1px solid var(--line);
+  color:var(--ink);
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.data-table tbody tr:nth-child(even){background:var(--tint);}
+.data-table td:first-child{font-weight:600;color:var(--navy);}
+.table-note{
+  font-size:.85rem;
+  color:var(--muted);
+  margin:-14px 0 26px;
+}
+
+.insight-quote{
+  border-left:4px solid var(--orange);
+  background:var(--orange-soft);
+  border-radius:0 12px 12px 0;
+  padding:18px 22px;
+  margin:0 0 26px;
+  font-style:italic;
+  color:var(--navy);
+}
+.insight-quote p{margin:0;}
+.insight-quote cite{
+  display:block;
+  margin-top:10px;
+  font-style:normal;
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--muted);
+}
+
 /* ---------------- Footer ---------------- */
 
 .footer{

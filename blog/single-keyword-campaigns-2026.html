@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Still Build Single Keyword Campaigns in 2026 | Marc Siblag</title>
+  <meta name="description" content="Single keyword campaigns still win in 2026 because they make attribution unambiguous and turn bid management into deterministic rules that software can execute without guessing.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../css/style.css?v=6">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+        <span class="logo-text">MARC<span class="logo-ppc">PPC</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+      <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener" class="btn btn-sm nav-cta">Book a Call</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Campaign Structure</span>
+      <h1>Why I Still Build Single Keyword Campaigns in 2026</h1>
+      <p class="page-meta">Published July 12, 2026 &middot; By <strong>Marc Siblag</strong></p>
+    </div>
+  </header>
+
+  <article class="article">
+    <img class="hero-img reveal" src="../images/blog-1.png" alt="Single keyword campaign structure illustration">
+    <p>The conventional wisdom in 2026 says that single keyword campaigns are a relic, that broad match plus Amazon's algorithm has made granular structure obsolete, and that anyone still isolating keywords is doing busywork. I manage advertising across a portfolio of brands for a living, and I still build single keyword campaigns for every term that matters, because the structure solves two problems that blended campaigns cannot touch.</p>
+    <p>The first problem is attribution clarity. When a campaign contains exactly one exact match keyword, every dollar of spend, every impression, every placement report, and every attributed order maps back to a single decision that I made. In a blended campaign the report tells me that forty targets shared the spend, and I am left inferring which one earned the sales, which is exactly the kind of inference that goes wrong quietly. In a SKAG structure the campaign report is the keyword report, so there is nothing left to untangle.</p>
+    <p>The second problem is that ambiguity kills automation. A bid rule pointed at a mixed campaign has to guess which target caused the outcome it is reacting to, and a rule that guesses is a rule I cannot trust with money. A bid rule pointed at a single keyword campaign acts on a fact. If this target has accumulated clicks with no orders, the rule cuts the bid, and there is no question about which product or which search intent it is punishing. That determinism is what lets me hand the daily work to software, and it is why I open sourced the engine that runs it at <a href="https://github.com/marcelo-coding/amazon-ads-skag-engine">github.com/marcelo-coding/amazon-ads-skag-engine</a>. The engine reads performance on a schedule and applies the same rule to the same situation every single time, which is a standard no human operator meets across two hundred campaigns.</p>
+    <p>A few launch conventions make the structure behave. I launch on fixed bids rather than the dynamic down only setting, because I want the resulting data to reflect the bid I chose instead of whatever Amazon discounted it to in each auction, and clean inputs are the whole point of the exercise. Every new campaign starts at ten dollars per day, which is enough for a single keyword to prove itself without letting any one term starve the rest of the account. Starting bids sit at the low end of Amazon's suggested range, because discovery should be cheap and the rules will raise a winner on their own.</p>
+    <p>The structure also needs hygiene to stay honest. When a search term proves itself inside a research campaign, it graduates into its own exact match campaign, and it gets negated back at the source in the same motion, so the term converts in exactly one place. Without that dedupe step the same query bleeds across campaigns and the attribution clarity I built the structure for evaporates.</p>
+    <p>The honest tradeoff is surface area. Single keyword campaigns multiply the number of objects you manage, and at portfolio scale nobody can review them all by hand, which is precisely why the structure and the automation have to arrive together. The campaigns make the data unambiguous, and the engine makes the workload irrelevant. People who abandoned SKAGs usually abandoned the manual labor, and I agree with them about the labor. I just kept the structure and deleted the human from the loop instead.</p>
+    <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
+  </article>
+
+  <section class="section section-dark cta-band">
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Next Step</span>
+        <h2>Want this kind of thinking on your account?</h2>
+        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">
+          <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+          <span class="logo-text">MARC<span class="logo-ppc">PPC</span></span>
+        </a>
+        <p class="footer-tagline">Amazon Ads Director running PPC, DSP, and the automation that protects margin.</p>
+        <a href="mailto:Marc.ca.business0328@gmail.com">Marc.ca.business0328@gmail.com</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/ppc-management.html">PPC Management</a></li>
+          <li><a href="../services/amazon-dsp-amc.html">Amazon DSP and AMC</a></li>
+          <li><a href="../services/automation-ai.html">Automation and AI Workflows</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../sops/account-takeover-sop.html">Account Takeover SOP</a></li>
+          <li><a href="../sops/weekly-optimization-sop.html">Weekly Optimization SOP</a></li>
+          <li><a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work With Me</h4>
+        <a class="btn btn-sm" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Marc Siblag. Built for Amazon sellers.
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=6"></script>
+</body>
+</html>

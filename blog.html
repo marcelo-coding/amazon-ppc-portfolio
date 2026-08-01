@@ -6,7 +6,7 @@
   <title>Blog | Marc Siblag, Amazon Ads Director and Automation Engineer</title>
   <meta name="description" content="Essays on Amazon advertising strategy from an Amazon Ads Director and Automation Engineer, covering single keyword campaigns, DSP remarketing doctrine, and bid automation as code.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -38,42 +38,42 @@
     </div>
   </header>
 
-  <article class="article" id="single-keyword-campaigns-2026">
-    <img class="hero-img reveal" src="images/blog-1.png" alt="Single keyword campaign structure illustration">
-    <span class="tag">Campaign Structure</span>
-    <h2 class="reveal">Why I Still Build Single Keyword Campaigns in 2026</h2>
-    <p>The conventional wisdom in 2026 says that single keyword campaigns are a relic, that broad match plus Amazon's algorithm has made granular structure obsolete, and that anyone still isolating keywords is doing busywork. I manage advertising across a portfolio of brands for a living, and I still build single keyword campaigns for every term that matters, because the structure solves two problems that blended campaigns cannot touch.</p>
-    <p>The first problem is attribution clarity. When a campaign contains exactly one exact match keyword, every dollar of spend, every impression, every placement report, and every attributed order maps back to a single decision that I made. In a blended campaign the report tells me that forty targets shared the spend, and I am left inferring which one earned the sales, which is exactly the kind of inference that goes wrong quietly. In a SKAG structure the campaign report is the keyword report, so there is nothing left to untangle.</p>
-    <p>The second problem is that ambiguity kills automation. A bid rule pointed at a mixed campaign has to guess which target caused the outcome it is reacting to, and a rule that guesses is a rule I cannot trust with money. A bid rule pointed at a single keyword campaign acts on a fact. If this target has accumulated clicks with no orders, the rule cuts the bid, and there is no question about which product or which search intent it is punishing. That determinism is what lets me hand the daily work to software, and it is why I open sourced the engine that runs it at <a href="https://github.com/marcelo-coding/amazon-ads-skag-engine">github.com/marcelo-coding/amazon-ads-skag-engine</a>. The engine reads performance on a schedule and applies the same rule to the same situation every single time, which is a standard no human operator meets across two hundred campaigns.</p>
-    <p>A few launch conventions make the structure behave. I launch on fixed bids rather than the dynamic down only setting, because I want the resulting data to reflect the bid I chose instead of whatever Amazon discounted it to in each auction, and clean inputs are the whole point of the exercise. Every new campaign starts at ten dollars per day, which is enough for a single keyword to prove itself without letting any one term starve the rest of the account. Starting bids sit at the low end of Amazon's suggested range, because discovery should be cheap and the rules will raise a winner on their own.</p>
-    <p>The structure also needs hygiene to stay honest. When a search term proves itself inside a research campaign, it graduates into its own exact match campaign, and it gets negated back at the source in the same motion, so the term converts in exactly one place. Without that dedupe step the same query bleeds across campaigns and the attribution clarity I built the structure for evaporates.</p>
-    <p>The honest tradeoff is surface area. Single keyword campaigns multiply the number of objects you manage, and at portfolio scale nobody can review them all by hand, which is precisely why the structure and the automation have to arrive together. The campaigns make the data unambiguous, and the engine makes the workload irrelevant. People who abandoned SKAGs usually abandoned the manual labor, and I agree with them about the labor. I just kept the structure and deleted the human from the loop instead.</p>
-  </article>
-
-  <article class="article" id="remarketing-first-amazon-dsp">
-    <img class="hero-img reveal" src="images/blog-2.png" alt="Amazon DSP remarketing funnel illustration">
-    <span class="tag">Amazon DSP</span>
-    <h2 class="reveal">A Remarketing First Doctrine for Amazon DSP</h2>
-    <p>Amazon DSP gets sold as an awareness machine. The standard pitch climbs down the funnel, with video at the top introducing the brand to strangers and remarketing at the bottom mopping up whatever trickles through. I run it in the opposite direction, and when I open a new DSP flight I start with zero upper funnel spend at all.</p>
-    <p>Display remarketing carries the volume, and it carries it because the audience has already told you the truth. Shoppers who viewed the product page or abandoned a cart have declared intent with their own behavior, so the job left to do is small and specific, which is to finish a sale that was already in motion. Display is the hammer for that job. The impressions are cheap, the frequency is controllable, and the return is measurable inside a window short enough to act on. Prospecting to cold audiences asks display to do a persuasion job it is bad at, while remarketing asks it to do a reminder job it is excellent at.</p>
-    <p>The budget follows the doctrine. I run flights on a 60/30/10 split, and the largest share belongs to remarketing display, because the money should sit where the intent already exists. The smaller shares expand outward only from audiences that the remarketing core has already proven can convert.</p>
-    <p>Video is where discipline matters most, because video is where DSP budgets go to die. My rule is that video has to earn its DSP budget in Sponsored Brands first. The Sponsored Brands video auction gives you fast, cheap, keyword level feedback on whether a creative actually stops a shopper and converts one, and a video that cannot win there is not going to be rescued by DSP inventory at DSP prices. Running unproven video on DSP is just an expensive way to discover that the creative is weak. When a video wins in Sponsored Brands, it has demonstrated demand capture with real purchase data behind it, and only then does it deserve programmatic scale.</p>
-    <p>The last piece of the doctrine is that products match audiences, not funnel stages. The funnel stage tells you how warm a shopper is, but it says nothing about which product belongs in front of them, and this is where most flight plans quietly go wrong. On one portfolio I ran, we built an audience of medical professionals, and the product that belonged in front of them was the footwear they actually wear on shift rather than the fragrance line from the same catalog, because the audience connection was real for one product and purely aspirational for the other. A nurse standing on a hospital floor for twelve hours has a concrete problem that one of those products solves, and no amount of funnel logic makes the other one relevant.</p>
-    <p>None of this means the upper funnel is worthless. It means the upper funnel is a privilege you earn. Once remarketing audiences are saturated, once video has proven itself in the sponsored auctions, and once the account is converting everything the lower funnel produces, then climbing toward colder audiences becomes a rational bet instead of a hopeful one. Until that point, every dollar you send upstream is a dollar taken from shoppers who were already reaching for the product, and I have never seen an awareness metric that justifies that trade.</p>
-  </article>
-
-  <article class="article" id="daily-bid-changes-as-code">
-    <img class="hero-img reveal" src="images/blog-3.png" alt="Bid rules as code illustration">
-    <span class="tag">Automation</span>
-    <h2 class="reveal">The Bid Change You Make Every Day Should Be Code</h2>
-    <p>Every Amazon advertiser makes bid changes daily, so the real question is whether those changes come from a person or from a policy. A human making bid changes brings mood, memory, and whatever the last account they looked at trained them to fear. Code brings the same decision to the same situation every time, and after years of running accounts both ways I have concluded that the daily bid change is exactly the kind of decision that should never be discretionary.</p>
-    <p>My bleeder rules are the clearest example. When a target has accumulated clicks with zero orders, my engine cuts the bid on a tiered schedule. At five or more clicks the bid is multiplied by 0.9, at ten or more by 0.4, at twenty or more by 0.2, and at thirty or more by 0.1. The tiers exist because evidence accumulates gradually. Five clicks without an order is weak evidence, so the response is a small trim that barely changes delivery. Ten clicks is a genuine signal, and the bid drops hard. By thirty clicks the target has been given every reasonable chance, and it keeps only a token bid. I cut rather than pause because a paused target stops generating information entirely, while a target at a tenth of its bid stays alive, keeps its history, and can still be raised later if the product or the season changes the math.</p>
-    <p>The second half of the system is the anchor. When my engine sets a new bid, the base is the target's actual CPC minus five cents, not some multiple of the old bid. The reasoning is simple, which is that your bid is a ceiling and your CPC is the truth. A target bid at two dollars that clears at ninety cents is not a two dollar keyword, and every calculation that starts from the bid instead of the realized cost inherits that fiction. Anchoring to CPC means the ladder climbs and descends from what the auction actually charges. The one floor I enforce is that a bid never drops all the way to Amazon's lowest suggested bid, because in practice that number is where delivery goes to die, and a bid that buys no impressions teaches you nothing.</p>
-    <p>Rules are only as good as their inputs, which is why the data side is its own piece of engineering. My extraction layer at <a href="https://github.com/marcelo-coding/amazon-ads-data-extractor">github.com/marcelo-coding/amazon-ads-data-extractor</a> pulls the advertising reports on a schedule and normalizes them into the shape the bid logic consumes, so the rules always fire against complete and current numbers rather than whatever happened to be exported last.</p>
-    <p>Treating bids as code also means treating changes to the rules with the seriousness of a deployment. My production engine runs a pinned deployment rather than the latest edit, so every rule change ships as a new version that gets deliberately promoted, and a bad idea can be rolled back to the exact behavior that came before it. The engine fires on a trigger every fifteen minutes inside a daily runtime budget, and it logs the health of every run, so when something looks wrong I am debugging a record instead of reconstructing a memory.</p>
-    <p>The deeper payoff is accountability. A bid change made by hand is an opinion that evaporates the moment it is made, while a bid change made by code is a policy with an author, a history, and a diff. When a month goes badly, I do not interrogate my past self about what I was thinking, because the repository already knows.</p>
-    <a class="back-link" href="index.html#blog">&larr; Back to the home page</a>
-  </article>
+  <section class="section">
+    <div class="container">
+      <div class="cards-3">
+        <a class="card preview-card reveal" href="blog/single-keyword-campaigns-2026.html">
+          <img class="thumb" src="images/blog-1.png" alt="Single keyword campaigns illustration">
+          <div class="body">
+            <span class="tag">Campaign Structure</span>
+            <h3>Why I Still Build Single Keyword Campaigns in 2026</h3>
+            <p class="post-meta">July 12, 2026 &middot; Marc Siblag</p>
+            <p>Single keyword campaigns still win in 2026 because they make attribution unambiguous and turn bid management into deterministic rules that software can execute without guessing.</p>
+            <span class="card-link">Read the post &rarr;</span>
+          </div>
+        </a>
+        <a class="card preview-card reveal" href="blog/remarketing-first-amazon-dsp.html">
+          <img class="thumb" src="images/blog-2.png" alt="Amazon DSP remarketing illustration">
+          <div class="body">
+            <span class="tag">Amazon DSP</span>
+            <h3>A Remarketing First Doctrine for Amazon DSP</h3>
+            <p class="post-meta">July 25, 2026 &middot; Marc Siblag</p>
+            <p>Most DSP budgets chase awareness. Mine start with display remarketing, make video prove itself in Sponsored Brands first, and match every product to its audience.</p>
+            <span class="card-link">Read the post &rarr;</span>
+          </div>
+        </a>
+        <a class="card preview-card reveal" href="blog/bid-changes-as-code.html">
+          <img class="thumb" src="images/blog-3.png" alt="Bid automation illustration">
+          <div class="body">
+            <span class="tag">Automation</span>
+            <h3>The Bid Change You Make Every Day Should Be Code</h3>
+            <p class="post-meta">August 1, 2026 &middot; Marc Siblag</p>
+            <p>Daily bid changes belong in code. My tiered rules cut bleeders on click thresholds and anchor every new bid to the CPC you actually paid.</p>
+            <span class="card-link">Read the post &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="section section-dark cta-band">
     <div class="orb orb-orange" aria-hidden="true"></div>
@@ -101,9 +101,9 @@
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="index.html#services">PPC Management</a></li>
-          <li><a href="index.html#services">Amazon DSP and AMC</a></li>
-          <li><a href="index.html#services">Automation and AI Workflows</a></li>
+          <li><a href="services/ppc-management.html">PPC Management</a></li>
+          <li><a href="services/amazon-dsp-amc.html">Amazon DSP and AMC</a></li>
+          <li><a href="services/automation-ai.html">Automation and AI Workflows</a></li>
         </ul>
       </div>
       <div>
@@ -112,6 +112,8 @@
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="index.html#about">About</a></li>
+          <li><a href="sops/account-takeover-sop.html">Account Takeover SOP</a></li>
+          <li><a href="sops/weekly-optimization-sop.html">Weekly Optimization SOP</a></li>
           <li><a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
@@ -125,6 +127,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=5"></script>
+  <script src="js/main.js?v=6"></script>
 </body>
 </html>

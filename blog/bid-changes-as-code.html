@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bid Change You Make Every Day Should Be Code | Marc Siblag</title>
+  <meta name="description" content="Daily bid changes belong in code. My tiered rules cut bleeders on click thresholds, anchor every new bid to the CPC you actually paid, and ship rule changes like deployments.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../css/style.css?v=6">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+        <span class="logo-text">MARC<span class="logo-ppc">PPC</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+      <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener" class="btn btn-sm nav-cta">Book a Call</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Automation</span>
+      <h1>The Bid Change You Make Every Day Should Be Code</h1>
+      <p class="page-meta">Published August 1, 2026 &middot; By <strong>Marc Siblag</strong></p>
+    </div>
+  </header>
+
+  <article class="article">
+    <img class="hero-img reveal" src="../images/blog-3.png" alt="Bid rules as code illustration">
+    <p>Every Amazon advertiser makes bid changes daily, so the real question is whether those changes come from a person or from a policy. A human making bid changes brings mood, memory, and whatever the last account they looked at trained them to fear. Code brings the same decision to the same situation every time, and after years of running accounts both ways I have concluded that the daily bid change is exactly the kind of decision that should never be discretionary.</p>
+    <p>My bleeder rules are the clearest example. When a target has accumulated clicks with zero orders, my engine cuts the bid on a tiered schedule. At five or more clicks the bid is multiplied by 0.9, at ten or more by 0.4, at twenty or more by 0.2, and at thirty or more by 0.1. The tiers exist because evidence accumulates gradually. Five clicks without an order is weak evidence, so the response is a small trim that barely changes delivery. Ten clicks is a genuine signal, and the bid drops hard. By thirty clicks the target has been given every reasonable chance, and it keeps only a token bid. I cut rather than pause because a paused target stops generating information entirely, while a target at a tenth of its bid stays alive, keeps its history, and can still be raised later if the product or the season changes the math.</p>
+    <p>The second half of the system is the anchor. When my engine sets a new bid, the base is the target's actual CPC minus five cents, not some multiple of the old bid. The reasoning is simple, which is that your bid is a ceiling and your CPC is the truth. A target bid at two dollars that clears at ninety cents is not a two dollar keyword, and every calculation that starts from the bid instead of the realized cost inherits that fiction. Anchoring to CPC means the ladder climbs and descends from what the auction actually charges. The one floor I enforce is that a bid never drops all the way to Amazon's lowest suggested bid, because in practice that number is where delivery goes to die, and a bid that buys no impressions teaches you nothing.</p>
+    <p>Rules are only as good as their inputs, which is why the data side is its own piece of engineering. My extraction layer at <a href="https://github.com/marcelo-coding/amazon-ads-data-extractor">github.com/marcelo-coding/amazon-ads-data-extractor</a> pulls the advertising reports on a schedule and normalizes them into the shape the bid logic consumes, so the rules always fire against complete and current numbers rather than whatever happened to be exported last.</p>
+    <p>Treating bids as code also means treating changes to the rules with the seriousness of a deployment. My production engine runs a pinned deployment rather than the latest edit, so every rule change ships as a new version that gets deliberately promoted, and a bad idea can be rolled back to the exact behavior that came before it. The engine fires on a trigger every fifteen minutes inside a daily runtime budget, and it logs the health of every run, so when something looks wrong I am debugging a record instead of reconstructing a memory.</p>
+    <p>The deeper payoff is accountability. A bid change made by hand is an opinion that evaporates the moment it is made, while a bid change made by code is a policy with an author, a history, and a diff. When a month goes badly, I do not interrogate my past self about what I was thinking, because the repository already knows.</p>
+    <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
+  </article>
+
+  <section class="section section-dark cta-band">
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Next Step</span>
+        <h2>Want this kind of thinking on your account?</h2>
+        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">
+          <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+          <span class="logo-text">MARC<span class="logo-ppc">PPC</span></span>
+        </a>
+        <p class="footer-tagline">Amazon Ads Director running PPC, DSP, and the automation that protects margin.</p>
+        <a href="mailto:Marc.ca.business0328@gmail.com">Marc.ca.business0328@gmail.com</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/ppc-management.html">PPC Management</a></li>
+          <li><a href="../services/amazon-dsp-amc.html">Amazon DSP and AMC</a></li>
+          <li><a href="../services/automation-ai.html">Automation and AI Workflows</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../sops/account-takeover-sop.html">Account Takeover SOP</a></li>
+          <li><a href="../sops/weekly-optimization-sop.html">Weekly Optimization SOP</a></li>
+          <li><a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work With Me</h4>
+        <a class="btn btn-sm" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Marc Siblag. Built for Amazon sellers.
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=6"></script>
+</body>
+</html>
