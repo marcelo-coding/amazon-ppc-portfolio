@@ -6,7 +6,8 @@
   <title>Marc Siblag | Amazon Ads Director and Automation Engineer</title>
   <meta name="description" content="Amazon Ads Director and Automation Engineer with ten years in Amazon e-commerce. PPC management, Amazon DSP and AMC, and automation that runs the daily bid work as code.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
         <li><a href="blog.html">Blog</a></li>
         <li><a href="#about">About</a></li>
       </ul>
-      <a href="#contact" class="btn btn-sm nav-cta">Book a Call</a>
+      <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" onclick="Calendly.initPopupWidget({url:'https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview'});return false;" class="btn btn-sm nav-cta">Book a Call</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -32,31 +33,29 @@
 
   <header class="hero" id="top">
     <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
     <div class="hero-grid">
       <div>
         <span class="hero-pill">Amazon Ads Director &middot; PPC &middot; DSP &middot; Automation</span>
         <h1>Amazon advertising that grows sales <span class="hl">without burning margin</span></h1>
-        <p>I have spent ten years in Amazon e-commerce, I manage 15 to 20 accounts at a time, and I hold an average ACoS of 25% on six figure PPC sales because the daily bid work in my accounts runs as code instead of guesswork.</p>
+        <p>I have spent ten years in Amazon e-commerce, I manage 15 to 20 accounts at a time, and I hold TACoS under 15 percent on flagship accounts because the daily bid work in my accounts runs as code instead of guesswork.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-glow">Book an intro call</a>
+          <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" onclick="Calendly.initPopupWidget({url:'https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview'});return false;" class="btn btn-glow">Book an intro call</a>
           <a href="case-studies.html" class="btn-ghost">See results</a>
         </div>
         <div class="hero-mini-stats">
           <div><div class="num">10 yrs</div><div class="lbl">In Amazon e-commerce</div></div>
           <div><div class="num">$3M</div><div class="lbl">Launch revenue in 10 months</div></div>
-          <div><div class="num">25%</div><div class="lbl">Average ACoS</div></div>
+          <div><div class="num">Sub 15% TACoS</div><div class="lbl">On flagship managed accounts</div></div>
         </div>
       </div>
-      <div class="cal-card" id="contact">
-        <div class="cal-head">Book a free PPC audit call</div>
-        <div class="calendly-inline-widget"
-             data-url="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview?hide_gdpr_banner=1&amp;primary_color=FF9900"
-             style="min-width:320px;height:1060px;"></div>
-        <noscript>
-          <div class="cal-fallback">
-            <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview">Open my Calendly to book a call</a>
-          </div>
-        </noscript>
+      <div class="book-card" id="contact">
+        <img class="book-avatar" src="images/headshot.png" alt="Marc Siblag">
+        <div class="book-title">Amazon PPC Consultation</div>
+        <div class="book-sub">30 minutes, free, on Zoom or Meet</div>
+        <p class="book-copy">We will walk your campaigns live and you keep every finding whether we work together or not.</p>
+        <a class="btn btn-glow book-btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" onclick="Calendly.initPopupWidget({url:'https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview'});return false;">Pick a time on my calendar</a>
       </div>
     </div>
   </header>
@@ -78,7 +77,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section stats-band">
     <div class="container">
       <div class="stats-grid">
         <div class="stat reveal">
@@ -106,14 +105,14 @@
           <div class="stat-icon" aria-hidden="true">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
           </div>
-          <div class="num" data-count="25" data-suffix="%">25%</div>
-          <div class="lbl">Average ACoS on six figure PPC sales</div>
+          <div class="num" data-count="15" data-prefix="Sub " data-suffix="% TACoS">Sub 15% TACoS</div>
+          <div class="lbl">On flagship managed accounts</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-tint" id="services">
+  <section class="section section-tint section-fade-top" id="services">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Services</span>
@@ -243,25 +242,53 @@
   </section>
 
   <section class="section section-dark" id="opensource">
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Open Source</span>
         <h2 style="color:#fff;">The tools that run my accounts are public</h2>
         <p class="lede">I open sourced the engines that do my daily work, because a bid change made by code is a policy with an author, a history, and a diff.</p>
       </div>
-      <div class="cards-2">
-        <div class="repo-card reveal">
-          <span class="repo-name">marcelo-coding/amazon-ads-skag-engine</span>
-          <h3>SKAG Optimization Engine</h3>
-          <p>The rules engine that manages my single keyword campaigns. It reads performance on a schedule, cuts bleeders on tiered click thresholds, and anchors every new bid to the CPC the auction actually charged.</p>
-          <a class="card-link" href="https://github.com/marcelo-coding/amazon-ads-skag-engine" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      <div class="carousel reveal">
+        <button class="car-arrow car-prev" type="button" aria-label="Previous tools">&#8249;</button>
+        <div class="car-track" tabindex="0" aria-label="Tooling carousel">
+          <div class="repo-card car-card">
+            <div class="repo-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M18 8.5a9 9 0 0 1-9 9"/><path d="M6 8.5v7"/></svg>
+            </div>
+            <span class="repo-name">marcelo-coding/amazon-ads-skag-engine</span>
+            <h3>SKAG Optimization Engine</h3>
+            <p>The rules engine that manages my single keyword campaigns. It reads performance on a schedule, cuts bleeders on tiered click thresholds, and anchors every new bid to the CPC the auction actually charged.</p>
+            <a class="card-link" href="https://github.com/marcelo-coding/amazon-ads-skag-engine" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+          </div>
+          <div class="repo-card car-card">
+            <div class="repo-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <span class="repo-name">marcelo-coding/amazon-ads-data-extractor</span>
+            <h3>Amazon Ads Data Extractor</h3>
+            <p>The extraction layer that feeds the bid logic. It pulls the advertising reports on a schedule and normalizes them, so the rules always fire against complete and current numbers.</p>
+            <a class="card-link" href="https://github.com/marcelo-coding/amazon-ads-data-extractor" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+          </div>
+          <div class="repo-card car-card">
+            <div class="repo-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <span class="repo-badge">In production</span>
+            <h3>Amazon Ads MCP Fleet</h3>
+            <p>I run a fleet of Amazon Ads MCP server instances, one per seller account, so AI agents can query campaigns, pull reports, and push bid changes through the official Ads API under my review.</p>
+          </div>
+          <div class="repo-card car-card">
+            <div class="repo-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8.5h-.94A6 6 0 1 0 9.5 16H17a3.75 3.75 0 0 0 0-7.5z"/><polyline points="6.5 20 9 22.5 11.5 20"/><line x1="9" y1="16.5" x2="9" y2="22.5"/><polyline points="12.5 19 15 16.5 17.5 19"/><line x1="15" y1="16.5" x2="15" y2="22.5"/></svg>
+            </div>
+            <span class="repo-badge">In production</span>
+            <h3>Cloud MCP Admin</h3>
+            <p>A cloud control plane for the whole MCP stack that snapshots configuration, syncs state to cloud storage on a five minute cadence, verifies parity by checksum, and can restore my entire environment to a fresh machine in one command.</p>
+          </div>
         </div>
-        <div class="repo-card reveal">
-          <span class="repo-name">marcelo-coding/amazon-ads-data-extractor</span>
-          <h3>Amazon Ads Data Extractor</h3>
-          <p>The extraction layer that feeds the bid logic. It pulls the advertising reports on a schedule and normalizes them, so the rules always fire against complete and current numbers.</p>
-          <a class="card-link" href="https://github.com/marcelo-coding/amazon-ads-data-extractor" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </div>
+        <button class="car-arrow car-next" type="button" aria-label="Next tools">&#8250;</button>
       </div>
     </div>
   </section>
@@ -315,7 +342,7 @@
         <img class="about-photo reveal" src="images/headshot.png" alt="Marc Siblag, Amazon Ads Director and Automation Engineer">
         <div class="about-copy reveal">
           <p>I am Marc, and I have spent the last ten years inside Amazon e-commerce, first on the seller side and then as a full time advertising specialist. Along the way I helped take a product launch to $3M in revenue within its first ten months, and that experience taught me that growth only counts when the margin survives it.</p>
-          <p>Today I manage advertising for 15 to 20 accounts at any given time, spanning Sponsored Products, Sponsored Brands, Sponsored Display, Amazon DSP, and AMC. Across that portfolio I hold an average ACoS of 25% on six figure PPC sales, and I can carry that load because I refuse to do repetitive work by hand. The bid rules, the report pipelines, and the campaign hygiene in my accounts all run as code that I wrote, versioned, and published.</p>
+          <p>Today I manage advertising for 15 to 20 accounts at any given time, spanning Sponsored Products, Sponsored Brands, Sponsored Display, Amazon DSP, and AMC. Across that portfolio I hold TACoS under 15 percent on my flagship accounts, and I can carry that load because I refuse to do repetitive work by hand. The bid rules, the report pipelines, and the campaign hygiene in my accounts all run as code that I wrote, versioned, and published.</p>
           <p>If you want an advertising partner who treats your budget like an engineering problem with a paper trail, we will probably get along. The fastest way to find out is a short call where we look at your account together and I tell you exactly what I would change first.</p>
         </div>
       </div>
@@ -323,12 +350,14 @@
   </section>
 
   <section class="section section-dark cta-band">
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Next Step</span>
         <h2>Let us look at your account together</h2>
         <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first. You keep the findings whether we work together or not.</p>
-        <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
+        <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" onclick="Calendly.initPopupWidget({url:'https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview'});return false;">Book a free audit call</a>
       </div>
     </div>
   </section>
@@ -371,6 +400,6 @@
   </footer>
 
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>
