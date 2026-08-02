@@ -4,9 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Remarketing First Doctrine for Amazon DSP | Marc Siblag</title>
-  <meta name="description" content="Most DSP budgets chase awareness. Mine start with display remarketing on a 60/30/10 split, make video prove itself in Sponsored Brands first, and match every product to its audience.">
+  <meta name="description" content="Most DSP budgets chase awareness. Mine start with display remarketing, make video prove itself in Sponsored Brands first, and match products to audiences.">
+  <link rel="canonical" href="https://marcppc.dev/blog/remarketing-first-amazon-dsp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Remarketing First Doctrine for Amazon DSP | Marc Siblag">
+  <meta property="og:description" content="Most DSP budgets chase awareness. Mine start with display remarketing, make video prove itself in Sponsored Brands first, and match products to audiences.">
+  <meta property="og:url" content="https://marcppc.dev/blog/remarketing-first-amazon-dsp.html">
+  <meta property="og:image" content="https://marcppc.dev/images/blog-2.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="../css/style.css?v=7">
+  <link rel="stylesheet" href="../css/style.css?v=8">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Remarketing First Doctrine for Amazon DSP",
+    "url": "https://marcppc.dev/blog/remarketing-first-amazon-dsp.html",
+    "image": "https://marcppc.dev/images/blog-2.png",
+    "author": {
+      "@type": "Person",
+      "name": "Marc Siblag",
+      "jobTitle": "Amazon Ads Director",
+      "url": "https://marcppc.dev/"
+    },
+    "datePublished": "2026-07-25"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://marcppc.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://marcppc.dev/blog.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "A Remarketing First Doctrine for Amazon DSP"
+      }
+    ]
+  }
+  </script>
+  <!-- Microsoft Clarity: replace CLARITY_PROJECT_ID with your Clarity project id -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
 </head>
 <body>
 
@@ -18,9 +74,29 @@
       </a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#services">Services</a></li>
-        <li><a href="../case-studies.html">Case Studies</a></li>
-        <li><a href="../blog.html">Blog</a></li>
+        <li class="has-dropdown">
+          <a href="../services/">Services</a>
+          <ul class="nav-dropdown">
+            <li><a href="../services/account-management.html">Amazon Account Management</a></li>
+            <li><a href="../services/ppc.html">Amazon PPC</a></li>
+            <li><a href="../services/dev-automation.html">Dev and Automation</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="../case-studies.html">Case Studies</a>
+          <ul class="nav-dropdown">
+            <li><a href="../case-studies/vermont-smoke-and-cure.html">Vermont Smoke &amp; Cure</a></li>
+            <li><a href="../case-studies/digdefence-solutions.html">DigDefence Solutions</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="../blog.html">Blog</a>
+          <ul class="nav-dropdown">
+            <li><a href="../blog/single-keyword-campaigns-2026.html">Single Keyword Campaigns in 2026</a></li>
+            <li><a href="../blog/remarketing-first-amazon-dsp.html">Remarketing First Amazon DSP</a></li>
+            <li><a href="../blog/bid-changes-as-code.html">Bid Changes as Code</a></li>
+          </ul>
+        </li>
         <li><a href="../index.html#about">About</a></li>
       </ul>
       <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener" class="btn btn-sm nav-cta">Book a Call</a>
@@ -29,6 +105,16 @@
       </button>
     </div>
   </nav>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="breadcrumbs-inner">
+      <a href="../index.html">Home</a>
+      <span class="crumb-sep">/</span>
+      <a href="../blog.html">Blog</a>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current">A Remarketing First Doctrine for Amazon DSP</span>
+    </div>
+  </nav>
+
 
   <header class="page-hero">
     <div class="page-hero-inner">
@@ -48,6 +134,35 @@
     <p>None of this means the upper funnel is worthless. It means the upper funnel is a privilege you earn. Once remarketing audiences are saturated, once video has proven itself in the sponsored auctions, and once the account is converting everything the lower funnel produces, then climbing toward colder audiences becomes a rational bet instead of a hopeful one. Until that point, every dollar you send upstream is a dollar taken from shoppers who were already reaching for the product, and I have never seen an awareness metric that justifies that trade.</p>
     <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
   </article>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Related</span>
+        <h2>Keep reading</h2>
+      </div>
+      <div class="cards-3">
+        <a class="card reveal" href="../blog/single-keyword-campaigns-2026.html">
+          <span class="tag">Campaign Structure</span>
+          <h3>Why I Still Build Single Keyword Campaigns in 2026</h3>
+          <p>Single keyword campaigns make attribution unambiguous and turn bid management into rules that software can run.</p>
+          <span class="card-link">Read the post &rarr;</span>
+        </a>
+        <a class="card reveal" href="../blog/bid-changes-as-code.html">
+          <span class="tag">Automation</span>
+          <h3>The Bid Change You Make Every Day Should Be Code</h3>
+          <p>My tiered rules cut bleeders on click thresholds and anchor every new bid to the CPC the auction actually charged.</p>
+          <span class="card-link">Read the post &rarr;</span>
+        </a>
+        <a class="card reveal" href="../services/ppc.html">
+          <span class="tag">Service</span>
+          <h3>Amazon PPC</h3>
+          <p>I run Sponsored Products, Sponsored Brands, and Sponsored Display as one system, extended into Amazon DSP and AMC when the account earns it.</p>
+          <span class="card-link">See the engagement &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="section section-dark cta-band">
     <div class="orb orb-orange" aria-hidden="true"></div>
@@ -101,6 +216,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=7"></script>
+  <script src="../js/main.js?v=8"></script>
 </body>
 </html>
