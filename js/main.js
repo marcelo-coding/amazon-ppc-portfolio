@@ -199,10 +199,9 @@
       });
     }
 
-    /* ---------------- Tooling carousel ---------------- */
+    /* ---------------- Carousels (case studies, tooling) ---------------- */
 
-    var track = document.querySelector(".car-track");
-    if (track) {
+    var setupCarousel = function (track) {
       var carousel = track.closest(".carousel") || track.parentElement;
       var prevBtn = carousel.querySelector(".car-prev");
       var nextBtn = carousel.querySelector(".car-next");
@@ -256,7 +255,9 @@
         carousel.addEventListener("focusout", startAuto);
         startAuto();
       }
-    }
+    };
+
+    document.querySelectorAll(".car-track").forEach(setupCarousel);
   };
 
   if (document.readyState === "loading") {
