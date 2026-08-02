@@ -1083,7 +1083,7 @@ p{max-width:65ch;}
   list-style:none;
   opacity:0;
   visibility:hidden;
-  transition:opacity .2s ease, transform .2s ease, visibility .2s;
+  transition:opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
   z-index:120;
 }
 .nav-links .nav-dropdown::before{
@@ -1097,6 +1097,7 @@ p{max-width:65ch;}
   opacity:1;
   visibility:visible;
   transform:translate(-50%,0);
+  transition-delay:0s;
 }
 .nav-links .nav-dropdown a{
   display:block;
@@ -1133,3 +1134,37 @@ p{max-width:65ch;}
 @media (max-width:860px){
   .nav-links .nav-dropdown{display:none;}
 }
+
+/* ---- topic filter row (blog) ---- */
+.topic-filter{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  margin-bottom:36px;
+}
+.topic-filter a{
+  display:inline-block;
+  padding:8px 20px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--muted);
+  transition:color .2s ease,border-color .2s ease,background .2s ease;
+}
+.topic-filter a:hover{
+  color:var(--ink);
+  border-color:var(--orange);
+  background:var(--orange-soft);
+  text-decoration:none;
+}
+
+/* ---- child service links inside service cards ---- */
+.card-children{
+  margin:14px 0 0 20px;
+  list-style:disc;
+}
+.card-children li{margin-top:6px;}
+.card-children li::marker{color:var(--orange);}
+.card-children a{font-size:.93rem;font-weight:600;}
