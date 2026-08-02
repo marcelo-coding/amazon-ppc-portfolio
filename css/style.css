@@ -567,6 +567,8 @@ p{max-width:65ch;}
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:24px;
+  max-width:880px;
+  margin:0 auto;
 }
 
 .card .icon{
@@ -647,6 +649,34 @@ p{max-width:65ch;}
 .brand-chip:hover{
   border-color:rgba(255,153,0,.5);
   transform:translateY(-2px);
+}
+.brand-chip-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.brand-chip-logo img{
+  height:28px;
+  width:auto;
+  display:block;
+}
+
+/* Case study brand logo card */
+
+.case-brand-logo{
+  display:inline-flex;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px 24px;
+  margin-bottom:20px;
+  box-shadow:0 1px 3px rgba(35,47,62,.06);
+}
+.case-brand-logo img{
+  width:180px;
+  max-width:100%;
+  height:auto;
+  display:block;
 }
 
 /* Case preview / blog preview cards */
