@@ -10,7 +10,7 @@
   <meta property="og:title" content="The CPC Matrix: Bid Steps Sized to What a Click Actually Costs">
   <meta property="og:description" content="Flat percentage bid rules cut small bids too hard and big bids too gently. My CPC matrix sizes every step to the bid's own magnitude and converges faster.">
   <meta property="og:url" content="https://marcppc.dev/blog/cpc-matrix-bidding.html">
-  <meta property="og:image" content="https://marcppc.dev/images/blog-1.png">
+  <meta property="og:image" content="https://marcppc.dev/images/blog-cpc-matrix.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="../css/style.css?v=12">
@@ -20,7 +20,7 @@
     "@type": "Article",
     "headline": "The CPC Matrix: Bid Steps Sized to What a Click Actually Costs",
     "url": "https://marcppc.dev/blog/cpc-matrix-bidding.html",
-    "image": "https://marcppc.dev/images/blog-1.png",
+    "image": "https://marcppc.dev/images/blog-cpc-matrix.png",
     "author": {
       "@type": "Person",
       "name": "Marc Siblag",
@@ -138,7 +138,7 @@
   </header>
 
   <article class="article">
-    <img class="hero-img reveal" src="../images/blog-1.png" alt="CPC matrix bid step table illustration">
+    <img class="hero-img reveal" src="../images/blog-cpc-matrix.png" alt="CPC bid matrix illustration">
     <p>After ten years in Amazon e-commerce and a desk that usually carries 15 to 20 accounts at once, the automation mistake I see most often is the flat percentage bid rule. One percentage applied to every bid sounds disciplined, but it cuts small bids too hard and big bids too gently, so the account never settles. The oversized cuts overshoot the profitable bid and force a correction the next cycle, the undersized cuts never arrive at the profitable bid at all, and the result is an account that oscillates instead of converging. I replaced the single percentage with a matrix that sizes every step to the bid's own magnitude, and this post is that table in full.</p>
     <p>The table reads like this. Bids around $3 step down $0.30, bids around $2 step down $0.20, and bids around $1 step down $0.10. Below a dollar the step is $0.07, between $0.30 and $0.10 the step is $0.05, and between $0.10 and $0.07 the step is $0.02. Bids already sitting at $0.02 or $0.03 stay exactly where they are, because they have nothing left to give and cutting them further only produces noise in the change log.</p>
     <p>Direction comes from one line, which is the account's ACOS target. On the account this table was built for that line sits at 25 percent, so every target running below the line walks up the table one step at a time, and every target running above it walks down. There is one override that ignores the line entirely: any enabled target with spend and zero sales walks down regardless of everything else, because a target with no sales has no ACOS to measure, and spend without sales is the one signal that never needs more context.</p>
