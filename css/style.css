@@ -427,10 +427,10 @@ p{max-width:65ch;}
 .angle-divider svg{
   display:block;
   width:100%;
-  height:72px;
+  height:56px;
 }
 @media (max-width:640px){
-  .angle-divider svg{height:44px;}
+  .angle-divider svg{height:36px;}
 }
 .section-dark{
   position:relative;
@@ -494,6 +494,15 @@ p{max-width:65ch;}
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:32px;
+  align-items:start;
+}
+/* Every tile stacks the same three blocks, so the row keeps one shared baseline
+   and no column is left padding out dead space under its label. */
+.stat{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  min-width:0;
 }
 .stat-icon{
   width:56px;
@@ -508,24 +517,35 @@ p{max-width:65ch;}
   margin-bottom:14px;
 }
 .stat-icon svg{width:30px;height:30px;}
+/* Sized so the longest value still sets on one line inside a quarter column,
+   because a wrapped number is what threw the row out of alignment. */
 .stat .num{
-  font-size:clamp(2.5rem,5vw,3.5rem);
+  font-size:clamp(2rem,3.2vw,2.9rem);
   font-weight:800;
   color:var(--orange);
   font-variant-numeric:tabular-nums;
-  line-height:1.05;
+  line-height:1.1;
+  white-space:nowrap;
 }
+/* The label reserves two lines at every width, so a caption that wraps on one
+   tile cannot leave the other three sitting on a shorter baseline. */
 .stat .lbl{
-  font-size:14px;
+  font-size:13px;
+  line-height:1.45;
+  min-height:2.9em;
   text-transform:uppercase;
-  letter-spacing:.08em;
+  letter-spacing:.06em;
   color:var(--muted);
-  margin-top:8px;
+  margin-top:10px;
 }
 
 /* Dark stats band: hero, credentials bar, and stats read as one block */
 
-.stats-band{background:var(--navy-deep);}
+.section.stats-band{
+  background:var(--navy-deep);
+  padding-top:64px;
+  padding-bottom:56px;
+}
 .stats-band .stat .lbl{color:rgba(255,255,255,.62);}
 .stats-band .stat-icon{background:rgba(255,153,0,.12);}
 
@@ -1106,6 +1126,9 @@ p{max-width:65ch;}
 
 @media (max-width:1024px){
   .process-track{grid-template-columns:repeat(2,minmax(0,1fr));}
+  /* Four quarter columns get too narrow to hold a full label on one line here,
+     so the band drops to a 2 by 2 before the labels start breaking. */
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:40px 32px;}
 }
 
 @media (max-width:960px){
@@ -1123,6 +1146,7 @@ p{max-width:65ch;}
   .about-photo{max-width:320px;}
   .footer-grid{grid-template-columns:1fr 1fr;padding:48px 24px 36px;}
   .section{padding:64px 24px;}
+  .section.stats-band{padding-top:48px;padding-bottom:56px;}
 
   .nav-toggle{display:block;}
   .nav-links{

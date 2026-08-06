@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Advertising Blog | Marc Siblag</title>
+  <meta name="description" content="The MCP servers, data pipelines, and automation I built to run 15 to 20 Amazon accounts as code, with sanitized source archives you can download and read.">
+  <link rel="canonical" href="https://marcppc.dev/tools.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tools I Have Built | Marc Siblag">
+  <meta property="og:description" content="The MCP servers, data pipelines, and automation I built to run Amazon accounts as code, with sanitized source archives you can download and read.">
+  <meta property="og:url" content="https://marcppc.dev/tools.html">
+  <meta property="og:image" content="https://marcppc.dev/images/blog-1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css?v=12">
+  <!-- Microsoft Clarity: replace CLARITY_PROJECT_ID with your Clarity project id -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+        <span class="logo-text">MARC<span class="logo-ppc">PPC</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <a href="services/">Services</a>
+          <ul class="nav-dropdown">
+            <li><a href="services/account-management.html">Amazon Account Management</a></li>
+            <li><a href="services/ppc.html">Amazon PPC</a></li>
+            <li><a href="services/dev-automation.html">Dev and Automation</a></li>
+            <li><a href="tools.html">Tools I Have Built</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="case-studies.html">Case Studies</a>
+          <ul class="nav-dropdown">
+            <li><a href="case-studies/vermont-smoke-and-cure.html">Vermont Smoke &amp; Cure</a></li>
+            <li><a href="case-studies/digdefence-solutions.html">DigDefence Solutions</a></li>
+            <li><a href="case-studies/swooc.html">SWOOC</a></li>
+            <li><a href="case-studies/oak-antler-seasoning.html">Oak &amp; Antler Seasoning Company</a></li>
+            <li><a href="case-studies/co2-lift.html">CO2 Lift</a></li>
+            <li><a href="case-studies/giftlot.html">Giftlot</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="blog.html">Blog</a>
+          <ul class="nav-dropdown">
+            <li><a href="blog/topics/ppc-strategy.html">PPC Strategy</a></li>
+            <li><a href="blog/topics/dsp.html">Amazon DSP</a></li>
+            <li><a href="blog/topics/automation.html">Automation</a></li>
+            <li><a href="blog.html">All Posts</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="about/">About</a>
+          <ul class="nav-dropdown">
+            <li><a href="about/my-story.html">My Story</a></li>
+            <li><a href="about/certifications.html">Certifications and Credentials</a></li>
+            <li><a href="about/my-stack.html">My Stack</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener" class="btn btn-sm nav-cta">Book a Call</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Tools</span>
+      <h1>The software I built to run accounts as code</h1>
+      <p>Every tool below exists because a repeated manual task earned automation, and every archive is a sanitized copy of the real source with credentials stripped, shared publicly so you can read exactly how my operation works. The full set lives in one <a href="https://drive.google.com/drive/folders/1o1Qiy029vGE-AHib0nXu20webPrG_Njg" target="_blank" rel="noopener">public Drive folder</a>.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">MCP Servers</span>
+        <h2>AI operations infrastructure</h2>
+        <p class="lede">These are Model Context Protocol servers I wrote so AI agents can operate my stack directly, because an agent that can read reports and file changes is worth ten dashboards.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card reveal">
+          <span class="tag">Amazon Ads API</span>
+          <h3>Amazon Ads MCP</h3>
+          <p>A multi-seat MCP server over the Amazon Ads API covering profiles, reporting, campaign and bulk operations, and AMC queries, and it is the backbone that lets my bid engines and AI workflows touch every account I manage from one interface.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1nAymhIgLaeztr6wY8ZbCOudaDNvGMcvU/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Google Workspace</span>
+          <h3>Google Service Account MCP</h3>
+          <p>A slim MCP server that reads and writes Sheets, Docs, and Drive through a service account, because every forecast, tracker, and client report I run ultimately lands in a spreadsheet and the automation needs the same access I have.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/17NhaCdr284agIsyZHcrKu51iGxjkHvgW/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Microsoft Graph</span>
+          <h3>OneNote MCP</h3>
+          <p>An MCP server for OneNote over the Microsoft Graph API with device code auth, paired with an extract and ingest pipeline that mirrors 667 notebook pages into a full text searchable SQLite database.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1rYhLwpun_9fhgYK8AOjEj-jDN23WmGkf/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Messaging</span>
+          <h3>WhatsApp MCP</h3>
+          <p>An MCP bridge into WhatsApp chats and media so client conversations can be searched, summarized, and folded into the same operational memory as Slack and email.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1QtAPOYCRX25HTs5EGcqpuSFYtla_PSY4/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Pipelines</span>
+        <h2>Data and operations pipelines</h2>
+        <p class="lede">These run on schedules and turn raw activity into decisions, because the daily work of 15 to 20 accounts only stays consistent when the plumbing is code.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card reveal">
+          <span class="tag">Operations Hub</span>
+          <h3>Tasks Hub</h3>
+          <p>A task engine that watches Slack mentions across three workspaces, uses AI to decide accountability and extract the task, files it to Google Tasks, notifies me on Discord, and maintains a repository database of over 42,000 cross-channel work log rows that gives every new task its full account history.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/18bqK5bZCG_kQVYv7DXcT0mBcRsR-KRRC/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Forecasting</span>
+          <h3>Forecast Tracking Sync</h3>
+          <p>The sync layer behind my 90 day per-account forecasts, keeping projections, actuals, and pacing in one sheet per account so every weekly report is measured against a written plan rather than a feeling.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1aErvGPiCEk5BBcxFHh0XuZjIFTOUqZSs/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Meetings</span>
+          <h3>Krisp Meeting Pipeline</h3>
+          <p>A pipeline that takes meeting transcripts, extracts the action items with AI, and turns them into tracked tasks, because decisions made on calls used to evaporate and now they land in a queue with an owner.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1gVz44dSFr0MwNL3WgQcFrcL8cmk1baFe/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Meetings</span>
+          <h3>Discord Meeting Recorder</h3>
+          <p>A Discord voice channel recorder that captures per-user audio to separate WAV tracks for clean transcription, built for the team calls that no meeting bot could join.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1xT4-Aq_SeewBxkrChgdbE6tmojYWo4JX/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Apps &amp; Extensions</span>
+        <h2>Extensions and standalone apps</h2>
+        <p class="lede">Smaller builds that remove daily friction, and the open source engines that do the daily bid work live on <a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a> where the commit history is the audit trail.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card reveal">
+          <span class="tag">Chrome Extension</span>
+          <h3>Chrome Memory Saver</h3>
+          <p>A tab management extension that suspends idle tabs while keeping chosen service tabs alive, built because a working browser with two hundred tabs is a real operating condition and not a joke.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1_SBK3HTbMOqZ5CFpCQB7ZDzAIclTTfYC/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">App</span>
+          <h3>Speech Coach</h3>
+          <p>A speaking practice app that records, transcribes, and scores delivery, which I built to sharpen the client facing half of the job because clear speech closes accounts as surely as clear reporting.</p>
+          <a class="card-link" href="https://drive.google.com/file/d/1AEaYJylJdFlcfyDXFR6uLa5y8_10fSTv/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Client Systems</span>
+          <h3>Private client automations</h3>
+          <p>Beyond the public archives I run client specific systems that stay private by design, including hourly Prime event budget pipelines, DSP report writers, an inventory aware supply chain sync, and alerting bots, and each one is described in the case studies where its results show up.</p>
+          <a class="card-link" href="case-studies.html" target="_blank" rel="noopener">See the results &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark cta-band">
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Next Step</span>
+        <h2>Want this kind of thinking on your account?</h2>
+        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-logo">
+          <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+          <span class="logo-text">MARC<span class="logo-ppc">PPC</span></span>
+        </a>
+        <p class="footer-tagline">Amazon Ads Director running PPC, DSP, and the automation that protects margin.</p>
+        <a href="mailto:Marc.ca.business0328@gmail.com">Marc.ca.business0328@gmail.com</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/account-management.html">Amazon Account Management</a></li>
+          <li><a href="services/ppc.html">Amazon PPC</a></li>
+          <li><a href="services/dev-automation.html">Dev and Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="about/">About</a></li>
+          <li><a href="sops/account-takeover-sop.html">Account Takeover SOP</a></li>
+          <li><a href="sops/weekly-optimization-sop.html">Weekly Optimization SOP</a></li>
+          <li><a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work With Me</h4>
+        <a class="btn btn-sm" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Marc Siblag. Built for Amazon sellers.
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=11"></script>
+</body>
+</html>
