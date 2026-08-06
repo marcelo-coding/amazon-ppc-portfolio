@@ -1349,3 +1349,13 @@ p{max-width:65ch;}
 .ac-tip div{display:flex;align-items:center;gap:6px;margin:2px 0;}
 .ac-tip b{margin-left:auto;font-variant-numeric:tabular-nums;}
 .ac-note{font-size:12px;color:#565959;border-top:1px solid #e7e9e9;margin-top:8px;padding-top:8px;}
+
+/* Ad console v2 additions */
+.ac-controls{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:13px;}
+.ac-ctl{color:#007185;cursor:pointer;text-decoration:none;}
+.ac-ctl:first-child{font-weight:700;text-decoration:underline;color:#0f1111;}
+.ac-ctl:hover{color:#c7511f;text-decoration:underline;}
+.ac-sep{color:#d5d9d9;}
+.ac-info{margin-left:2px;vertical-align:-1px;}
+.ac-expand{margin-left:auto;cursor:pointer;opacity:.8;}
+.ac-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
