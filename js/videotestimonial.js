@@ -1,73 +1,61 @@
-/* Video testimonials: poster tiles that open the clip in a lightbox. */
+/* Video testimonials: the clip plays inside its own card, never in a popup. */
 (function () {
   'use strict';
 
-  var overlay = null;
-
-  function close() {
-    if (!overlay) return;
-    var v = overlay.querySelector('video');
-    if (v) v.pause();
-    overlay.remove();
-    overlay = null;
-    document.body.style.overflow = '';
-    document.removeEventListener('keydown', onKey);
+  function stopOthers(except) {
+    Array.prototype.forEach.call(document.querySelectorAll('.vt-poster video'), function (v) {
+      if (v !== except) { v.pause(); }
+    });
   }
 
-  function onKey(e) { if (e.key === 'Escape') close(); }
+  function play(card) {
+    var poster = card.querySelector('.vt-poster');
+    if (!poster) return;
 
-  function open(card) {
-    close();
-    var src = card.getAttribute('data-video');
-    var embed = card.getAttribute('data-embed');
-    if (!src && !embed) return;
-
-    overlay = document.createElement('div');
-    overlay.className = 'vt-overlay';
-    var box = document.createElement('div');
-    box.className = 'vt-box';
-
-    if (embed) {
-      var f = document.createElement('iframe');
-      f.src = embed;
-      f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
-      f.allowFullscreen = true;
-      f.title = card.getAttribute('data-title') || 'Client testimonial';
-      box.appendChild(f);
-    } else {
-      var v = document.createElement('video');
-      v.src = src;
-      v.controls = true;
-      v.autoplay = true;
-      v.playsInline = true;
-      var poster = card.getAttribute('data-poster');
-      if (poster) v.poster = poster;
-      box.appendChild(v);
+    var existing = poster.querySelector('video');
+    if (existing) {
+      stopOthers(existing);
+      if (existing.paused) { existing.play(); } else { existing.pause(); }
+      return;
     }
 
-    var x = document.createElement('button');
-    x.type = 'button';
-    x.className = 'vt-close';
-    x.setAttribute('aria-label', 'Close video');
-    x.innerHTML = '&times;';
-    x.addEventListener('click', close);
-    box.appendChild(x);
+    var src = card.getAttribute('data-video');
+    if (!src) return;
 
-    overlay.appendChild(box);
-    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
-    document.body.appendChild(overlay);
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
+    var v = document.createElement('video');
+    v.src = src;
+    v.controls = true;
+    v.autoplay = true;
+    v.playsInline = true;
+    v.setAttribute('playsinline', '');
+    v.preload = 'metadata';
+    var p = card.getAttribute('data-poster');
+    if (p) v.poster = p;
+
+    var img = poster.querySelector('img');
+    var badge = poster.querySelector('.vt-play');
+    if (img) img.style.display = 'none';
+    if (badge) badge.style.display = 'none';
+    poster.appendChild(v);
+    card.classList.add('is-playing');
+
+    v.addEventListener('play', function () { stopOthers(v); });
+    v.addEventListener('click', function (e) { e.stopPropagation(); });
   }
 
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll('.vt-card'), function (card) {
-      card.addEventListener('click', function (e) { e.preventDefault(); open(card); });
+      card.addEventListener('click', function (e) {
+        if (e.target && e.target.tagName === 'VIDEO') return;
+        e.preventDefault();
+        play(card);
+      });
       card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(card); }
       });
     });
   }
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
