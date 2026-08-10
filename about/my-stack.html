@@ -121,15 +121,15 @@
   </header>
 
   <article class="article">
-    <h3>The SKAG Optimization Engine</h3>
+    <h3>SKAG Optimization Engine</h3>
     <p>Single keyword campaigns sit on an open source rules engine that reads performance on a fifteen minute trigger, cuts bleeders on tiered click thresholds, and anchors every new bid to the CPC the auction actually charged rather than to the bid someone once guessed. I ship it like production software, with a pinned deployment where every rule change is a version that can be promoted or rolled back deliberately.</p>
     <p>Get it: <a href="https://drive.google.com/file/d/1x0xA0pkVczYSMZ7l2Ey_rpea91fMUOTe/view" target="_blank" rel="noopener">Download the sanitized engine source →</a>.</p>
 
-    <h3>The Amazon Ads Data Extractor</h3>
+    <h3>Amazon Ads Data Extractor</h3>
     <p>An open source extraction layer feeds the engine. It pulls the advertising reports on a schedule and normalizes them, because a bid rule is only as good as the numbers it fires against, and a stale export produces confident decisions about a market that no longer exists.</p>
     <p>Get it: <a href="https://drive.google.com/file/d/1iuox3J8D14WMcQK1mkieBjBcda8w3Hot/view" target="_blank" rel="noopener">Download the extractor source →</a>.</p>
 
-    <h3>The Amazon Ads MCP Fleet</h3>
+    <h3>Amazon Ads MCP Fleet</h3>
     <p>I run one Amazon Ads MCP server per seller account, so AI agents can query campaigns, pull reports, and push bid changes through the official Ads API while everything they do stays under my review.</p>
     <p>Get it: <a href="https://drive.google.com/file/d/1nAymhIgLaeztr6wY8ZbCOudaDNvGMcvU/view" target="_blank" rel="noopener">Download the MCP server source →</a>.</p>
 

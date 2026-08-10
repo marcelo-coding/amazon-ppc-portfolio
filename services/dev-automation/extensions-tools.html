@@ -51,7 +51,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Dev and Automation",
+        "name": "Development and Automation",
         "item": "https://marcppc.dev/services/dev-automation.html"
       },
       {
@@ -146,7 +146,7 @@
   </header>
 
   <article class="article">
-    <h3>The Data Extraction Layer</h3>
+    <h3>Data Extraction Layer</h3>
     <p>Automation is only as trustworthy as the data under it, so I start with the open source <a href="https://github.com/marcelo-coding/amazon-ads-data-extractor" target="_blank" rel="noopener">data extraction layer</a>. It pulls the advertising reports on a schedule and normalizes them into one consistent shape. Amazon's reports arrive in different formats with different retention windows and different quirks, and the extractor absorbs all of that so downstream rules always fire against complete and current numbers instead of a stale export someone downloaded last Tuesday. When the data layer is boring and reliable, everything built on top of it inherits that reliability.</p>
 
     <h3>Bulk Tooling and Custom Extensions</h3>
@@ -155,7 +155,7 @@
     <h3>Spreadsheet Engines</h3>
     <p>Clients work in spreadsheets, so I build spreadsheet engines that refresh from the same data layer the automation uses. Pacing trackers, campaign dashboards, and forecast sheets all pull from scheduled data flows rather than manual exports, which means the sheet a founder opens on Monday morning shows the same numbers my rules acted on over the weekend. As they update, the sheets keep their formatting and their formulas, because a report meant for a human should read like it was built for a human.</p>
 
-    <h3>What This Produces</h3>
+    <h3>What You Get</h3>
     <p>I run the repetitive work as code with a paper trail, and the humans spend their hours on judgment instead of data entry. Reports stop disagreeing with each other because they share one data layer. Bulk changes stop introducing typos because a tool applies them. The account stops depending on whoever happens to remember the manual procedure that week. This is the internal tooling that lets one operator run accounts at a depth that normally requires a team.</p>
 
     <p>If your team is still stitching reports by hand from console exports, <a href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" onclick="Calendly.initPopupWidget({url:'https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview'});return false;">book a free audit call</a> and I will show you what the automated version of your workflow looks like.</p>
@@ -165,7 +165,7 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Related</span>
-        <h2>Keep exploring</h2>
+        <h2>Next steps</h2>
       </div>
       <div class="cards-3">
         <a class="card reveal" href="ai-agents-mcp.html">
@@ -176,13 +176,13 @@
         </a>
         <a class="card reveal" href="../dev-automation.html">
           <span class="tag">Service</span>
-          <h3>Dev and Automation</h3>
+          <h3>Development and Automation</h3>
           <p>I write the software that runs my accounts, so the daily bid changes fire as code against complete, current numbers.</p>
           <span class="card-link">See the engagement &rarr;</span>
         </a>
         <a class="card reveal" href="../../blog/bid-changes-as-code.html">
           <span class="tag">Automation</span>
-          <h3>Turn the Bid Change You Make Every Day into Code</h3>
+          <h3>Code the Bid Change You Make Every Day</h3>
           <p>I use tiered rules that cut bleeders on click thresholds and anchor every new bid to the CPC the auction actually charged.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>

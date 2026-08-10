@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marc Siblag | My Weekly Optimization SOP</title>
+  <title>Marc Siblag | My Weekly Optimization Playbook</title>
   <meta name="description" content="My daily, weekly, and monthly cadence for every Amazon account, with the three bucket sort, bid moves, and harvest and negation.">
   <link rel="canonical" href="https://marcppc.dev/sops/weekly-optimization-sop.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Marc Siblag | My Weekly Optimization SOP">
+  <meta property="og:title" content="Marc Siblag | My Weekly Optimization Playbook">
   <meta property="og:description" content="My daily, weekly, and monthly cadence for every Amazon account, with the three bucket sort, bid moves, and harvest and negation.">
   <meta property="og:url" content="https://marcppc.dev/sops/weekly-optimization-sop.html">
   <meta property="og:image" content="https://marcppc.dev/images/blog-3.png">
@@ -108,7 +108,7 @@
   <header class="page-hero">
     <div class="page-hero-inner">
       <span class="eyebrow">Standard Operating Procedure</span>
-      <h1>My Weekly Optimization SOP</h1>
+      <h1>Weekly Optimization SOP</h1>
       <p>Three clocks keep an account healthy after takeover. I publish the whole cadence because rules based optimization only counts when the rules are written down.</p>
     </div>
   </header>
@@ -116,11 +116,11 @@
   <article class="article">
     <p>Takeover stabilizes the account, and this cadence keeps it stable. One light daily check catches fires, one weekly working session makes the changes, and a monthly review resets the strategy. Almost every decision is rules based, so two people running this SOP on the same data should land on the same changes.</p>
 
-    <h3>What I Check Daily</h3>
+    <h3>Daily Checks</h3>
     <p>The daily pass stays short. I watch spend pacing against the budget, look for Amazon's out of budget flag on campaigns that are making money, and check stock on the best sellers, because a stockout on a hero product tanks conversion and skews every metric downstream. When a best seller drops out of stock I shift spend to in stock products, then shift it back on replenishment, and I log stock status in the performance narrative so nobody mistakes a supply issue for an advertising issue.</p>
     <p>Major event windows turn the daily check into a full cadence. At fixed checkpoints I monitor performance, raise budgets on top performers that run out within the account cap, and fix uncompetitive bids on winners showing no impressions. I also pull an end of day snapshot of spend, sales, and ACoS, then compare it to the baseline and to the prior event days. For events I shorten the analysis window to seven days instead of thirty, because event traffic moves too fast for a monthly average to mean anything.</p>
 
-    <h3>The Weekly Session: Three Bucket Sort</h3>
+    <h3>Weekly Session Three Bucket Sort</h3>
     <p>Once a week I work off the last 30 days of data. Every keyword and every campaign goes into one of three buckets against the target ACoS, which defaults to 20 percent when nothing better is established. A Top Performer sits at or below target with sales, so it gets pushed. A Bloated target sits above target but still sells, so it gets eased off. A Bleeder has spend with zero sales in 30 days, so it gets cut. This one sort drives the bids, the budgets, and the negations that follow.</p>
 
     <h3>Weekly Bid Optimization</h3>
@@ -140,7 +140,7 @@
     <p>By the third business day of each month I post the prior month's actuals against the forecast, and a variance beyond plus or minus 10 percent triggers an investigation. The account gets rescored on current data, a score swing of two or more points forces a fresh look at the growth projection, and every standing assumption gets checked and updated. Only forward months ever change, so the original forecast stays visible and the variance tracking stays honest.</p>
     <p>On a longer cycle I run a structural deep clean. Enabled campaigns with lifetime spend and zero sales get paused. Campaigns running above 40 percent ACoS across the recent windows get paused. Campaigns with zero impressions get paused. A catch all campaign is the standing exception and never gets paused. Search terms that burned more than ten dollars over 90 days without converting get negated in their campaigns, and previously converting targets get consolidated into dedicated low bid campaigns so their history keeps working without the waste.</p>
 
-    <h3>What Fires Automatically</h3>
+    <h3>What Runs Automatically</h3>
     <p>The bucket definitions, the bid step table, and the golden rules are fully mechanical, so they fire the same way every week without judgment calls. The automation platform holds the standing ACoS thresholds and the dayparting schedule between sessions, and around events I tighten those automations before traffic surges and reset them afterward, with the original settings documented first so every change can be reversed. Judgment stays reserved for the monthly strategy review, the reinvestment decisions, and the escalation when a brand's goals start conflicting with their own numbers.</p>
 
     <p>The takeover process that sets this up lives in <a href="account-takeover-sop.html">my account takeover SOP</a>, and the engine that runs the mechanical pieces sits on the <a href="../services/dev-automation.html">dev and automation service page</a>.</p>
