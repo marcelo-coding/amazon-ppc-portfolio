@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Bid Change You Make Every Day Should Be Code</title>
-  <meta name="description" content="Daily bid changes belong in code. My tiered rules cut bleeders on click thresholds and anchor every new bid to the CPC the auction actually charged.">
+  <title>Make the Daily Bid Change a Line of Code</title>
+  <meta name="description" content="Put daily bid changes in code. I cut bleeders on click thresholds with tiered rules and anchor each new bid to the CPC the auction actually charged.">
   <link rel="canonical" href="https://marcppc.dev/blog/bid-changes-as-code.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="The Bid Change You Make Every Day Should Be Code">
-  <meta property="og:description" content="Daily bid changes belong in code. My tiered rules cut bleeders on click thresholds and anchor every new bid to the CPC the auction actually charged.">
+  <meta property="og:title" content="Make Your Daily Bid Changes Code">
+  <meta property="og:description" content="Make daily bid edits code. My tiers cut bleeders on click counts, and every new bid anchors to the CPC the auction actually charged.">
   <meta property="og:url" content="https://marcppc.dev/blog/bid-changes-as-code.html">
   <meta property="og:image" content="https://marcppc.dev/images/blog-3.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,18 +133,18 @@
     <div class="page-hero-inner">
       <span class="eyebrow">Automation</span>
       <h1>The Bid Change You Make Every Day Should Be Code</h1>
-      <p class="page-meta">Published August 1, 2026 &middot; By <strong>Marc Siblag</strong></p>
+      <p class="page-meta">Published on August 1, 2026 · By <strong>Marc Siblag</strong></p>
     </div>
   </header>
 
   <article class="article">
     <img class="hero-img reveal" src="../images/blog-3.png" alt="Bid rules as code illustration">
-    <p>Every Amazon advertiser makes bid changes daily, so the real question is whether those changes come from a person or from a policy. A human making bid changes brings mood, memory, and whatever the last account they looked at trained them to fear. Code brings the same decision to the same situation every time, and after years of running accounts both ways I have concluded that the daily bid change is exactly the kind of decision that should never be discretionary.</p>
-    <p>My bleeder rules are the clearest example. When a target has accumulated clicks with zero orders, my engine cuts the bid on a tiered schedule. At five or more clicks the bid is multiplied by 0.9, at ten or more by 0.4, at twenty or more by 0.2, and at thirty or more by 0.1. The tiers exist because evidence accumulates gradually. Five clicks without an order is weak evidence, so the response is a small trim that barely changes delivery. Ten clicks is a genuine signal, and the bid drops hard. By thirty clicks the target has been given every reasonable chance, and it keeps only a token bid. I cut rather than pause because a paused target stops generating information entirely, while a target at a tenth of its bid stays alive, keeps its history, and can still be raised later if the product or the season changes the math.</p>
-    <p>The second half of the system is the anchor. When my engine sets a new bid, the base is the target's actual CPC minus five cents, not some multiple of the old bid. The reasoning is simple, which is that your bid is a ceiling and your CPC is the truth. A target bid at two dollars that clears at ninety cents is not a two dollar keyword, and every calculation that starts from the bid instead of the realized cost inherits that fiction. Anchoring to CPC means the ladder climbs and descends from what the auction actually charges. The one floor I enforce is that a bid never drops all the way to Amazon's lowest suggested bid, because in practice that number is where delivery goes to die, and a bid that buys no impressions teaches you nothing.</p>
-    <p>Rules are only as good as their inputs, which is why the data side is its own piece of engineering. My extraction layer at <a href="https://github.com/marcelo-coding/amazon-ads-data-extractor">github.com/marcelo-coding/amazon-ads-data-extractor</a> pulls the advertising reports on a schedule and normalizes them into the shape the bid logic consumes, so the rules always fire against complete and current numbers rather than whatever happened to be exported last.</p>
-    <p>Treating bids as code also means treating changes to the rules with the seriousness of a deployment. My production engine runs a pinned deployment rather than the latest edit, so every rule change ships as a new version that gets deliberately promoted, and a bad idea can be rolled back to the exact behavior that came before it. The engine fires on a trigger every fifteen minutes inside a daily runtime budget, and it logs the health of every run, so when something looks wrong I am debugging a record instead of reconstructing a memory.</p>
-    <p>The deeper payoff is accountability. A bid change made by hand is an opinion that evaporates the moment it is made, while a bid change made by code is a policy with an author, a history, and a diff. When a month goes badly, I do not interrogate my past self about what I was thinking, because the repository already knows.</p>
+    <p>Everyone tweaks bids every day. The only choice is a person or a policy. People bring mood, memory, and the bias from the last account they touched. Code brings the same rule to the same situation every time. After running accounts both ways for years, I treat the daily bid change as policy, not discretion.</p>
+    <p>My bleeder rules are simple. When a target stacks clicks with zero orders, the engine cuts on tiers. At five or more clicks the bid is multiplied by 0.9, at ten or more by 0.4, at twenty or more by 0.2, and at thirty or more by 0.1. The tiers match the strength of the evidence. Five clicks without an order is weak, so I trim lightly to keep delivery. Ten clicks is a real signal, so the bid drops hard. By thirty clicks the target has had a fair shot and keeps only a token bid. I cut rather than pause, because a paused target stops producing data, and a target at a tenth of its bid stays alive, keeps its history, and can be raised later when product or season changes the math.</p>
+    <p>The other half is the anchor. When the engine sets a new bid, it starts from the target's actual CPC minus five cents, not a multiple of the old bid. Your bid is a ceiling. Your CPC is the truth. A target bid at two dollars that clears at ninety cents is not a two dollar keyword, and any math that starts from the bid keeps that fiction alive. Anchoring to CPC makes the ladder move off what the auction actually charges. One floor stays in place. A bid never drops to Amazon's lowest suggested bid, because that level is where delivery goes to die, and a bid that buys no impressions teaches you nothing.</p>
+    <p>Rules are only as good as their inputs, so the data path gets its own build. My extraction layer at <a href="https://github.com/marcelo-coding/amazon-ads-data-extractor">github.com/marcelo-coding/amazon-ads-data-extractor</a> pulls advertising reports on schedule and normalizes them into the shape the bid logic consumes, so the rules hit complete and current numbers instead of whatever someone last exported.</p>
+    <p>Treating bids as code means rule changes ship like a deployment. My production engine runs a pinned deployment rather than the latest edit, so every rule change goes out as a new version that is promoted on purpose, and a bad idea can be rolled back to the exact behavior that came before it. The engine fires on a trigger every fifteen minutes inside a daily runtime budget, and it logs the health of every run, so when something looks off I am debugging a record instead of reconstructing a memory.</p>
+    <p>Code makes accountability real. A bid change made by hand is an opinion that evaporates the moment it is done. A bid change made by code is a policy with an author, a history, and a diff. When a month goes badly, I do not interrogate my past self about what I was thinking, because the repository already knows.</p>
     <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
   </article>
 
@@ -157,20 +157,20 @@
       <div class="cards-3">
         <a class="card reveal" href="../blog/single-keyword-campaigns-2026.html">
           <span class="tag">Campaign Structure</span>
-          <h3>Why I Still Build Single Keyword Campaigns in 2026</h3>
-          <p>Single keyword campaigns make attribution unambiguous and turn bid management into rules that software can run.</p>
+          <h3>Why I still run single keyword campaigns in 2026</h3>
+          <p>Single keyword campaigns keep attribution clean and turn bid management into rules software can run.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
         <a class="card reveal" href="../blog/remarketing-first-amazon-dsp.html">
           <span class="tag">Amazon DSP</span>
-          <h3>A Remarketing First Doctrine for Amazon DSP</h3>
-          <p>I open every DSP flight with zero upper funnel spend, because display remarketing finishes sales that are already in motion.</p>
+          <h3>A remarketing first doctrine for Amazon DSP</h3>
+          <p>I open every DSP flight with zero upper funnel spend, because display remarketing finishes sales already in motion.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
         <a class="card reveal" href="../services/dev-automation.html">
           <span class="tag">Service</span>
           <h3>Dev and Automation</h3>
-          <p>I build the software that runs my accounts, so the daily bid changes fire as code against complete, current numbers.</p>
+          <p>I write the software that runs my accounts, so daily bid changes fire as code against complete, current numbers.</p>
           <span class="card-link">See the engagement &rarr;</span>
         </a>
       </div>
@@ -183,8 +183,8 @@
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Next Step</span>
-        <h2>Want this kind of thinking on your account?</h2>
-        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <h2>Want this approach applied to your account?</h2>
+        <p>Book a free audit call. I will review your campaigns live, flag the spend leaks, and name the first change I would make.</p>
         <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
       </div>
     </div>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Advertising Blog | Marc Siblag</title>
-  <meta name="description" content="The MCP servers, data pipelines, and automation I built to run 15 to 20 Amazon accounts as code, with sanitized source archives you can download and read.">
+  <title>Marc Siblag | Amazon Advertising Blog</title>
+  <meta name="description" content="MCP servers, data pipelines, and automation I built to run 15 to 20 Amazon accounts as code, with sanitized source archives you can download and read.">
   <link rel="canonical" href="https://marcppc.dev/tools.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tools I Have Built | Marc Siblag">
-  <meta property="og:description" content="The MCP servers, data pipelines, and automation I built to run Amazon accounts as code, with sanitized source archives you can download and read.">
+  <meta property="og:title" content="Marc Siblag | Tools I Have Built">
+  <meta property="og:description" content="MCP servers, data pipelines, and automation I built to run Amazon accounts as code, with sanitized source archives you can download and read.">
   <meta property="og:url" content="https://marcppc.dev/tools.html">
   <meta property="og:image" content="https://marcppc.dev/images/blog-1.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -81,8 +81,8 @@
   <header class="page-hero">
     <div class="page-hero-inner">
       <span class="eyebrow">Tools</span>
-      <h1>The software I built to run accounts as code</h1>
-      <p>Every tool below exists because a repeated manual task earned automation, and every archive is a sanitized copy of the real source with credentials stripped, shared publicly so you can read exactly how my operation works. The full set lives in one <a href="https://drive.google.com/drive/folders/1o1Qiy029vGE-AHib0nXu20webPrG_Njg" target="_blank" rel="noopener">public Drive folder</a>.</p>
+      <h1>Software I built to run accounts as code</h1>
+      <p>I automated each tool only after a manual task kept repeating, and every archive is a sanitized copy of the real source with credentials stripped so you can read how my operation works. The full set lives in one <a href="https://drive.google.com/drive/folders/1o1Qiy029vGE-AHib0nXu20webPrG_Njg" target="_blank" rel="noopener">public Drive folder</a>.</p>
     </div>
   </header>
 
@@ -91,37 +91,37 @@
       <div class="section-head reveal">
         <span class="eyebrow">MCP Servers</span>
         <h2>AI operations infrastructure</h2>
-        <p class="lede">These are Model Context Protocol servers I wrote so AI agents can operate my stack directly, because an agent that can read reports and file changes is worth ten dashboards.</p>
+        <p class="lede">I wrote Model Context Protocol servers so AI agents can operate my stack directly, because an agent that can read reports and file changes beats ten dashboards.</p>
       </div>
       <div class="cards-3">
         <div class="card reveal">
           <span class="tag">Amazon Ads API</span>
           <h3>Amazon Ads MCP</h3>
-          <p>A multi-seat MCP server over the Amazon Ads API covering profiles, reporting, campaign and bulk operations, and AMC queries, and it is the backbone that lets my bid engines and AI workflows touch every account I manage from one interface.</p>
+          <p>This multi-seat MCP server runs over the Amazon Ads API and covers profiles, reporting, campaign and bulk operations, and AMC queries. It is the backbone that lets my bid engines and AI workflows touch every account I manage from one interface.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1nAymhIgLaeztr6wY8ZbCOudaDNvGMcvU/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Google Workspace</span>
           <h3>Google Service Account MCP</h3>
-          <p>A slim MCP server that reads and writes Sheets, Docs, and Drive through a service account, because every forecast, tracker, and client report I run ultimately lands in a spreadsheet and the automation needs the same access I have.</p>
+          <p>This slim MCP server reads and writes Sheets, Docs, and Drive through a service account, because every forecast, tracker, and client report I run lands in a spreadsheet and the automation needs the same access I have.</p>
           <a class="card-link" href="https://drive.google.com/file/d/17NhaCdr284agIsyZHcrKu51iGxjkHvgW/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Microsoft Graph</span>
           <h3>OneNote MCP</h3>
-          <p>An MCP server for OneNote over the Microsoft Graph API with device code auth, paired with an extract and ingest pipeline that mirrors 667 notebook pages into a full text searchable SQLite database.</p>
+          <p>An MCP server for OneNote runs over the Microsoft Graph API with device code auth, paired with an extract and ingest pipeline that mirrors 667 notebook pages into a full text searchable SQLite database.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1rYhLwpun_9fhgYK8AOjEj-jDN23WmGkf/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Messaging</span>
           <h3>WhatsApp MCP</h3>
-          <p>An MCP bridge into WhatsApp chats and media so client conversations can be searched, summarized, and folded into the same operational memory as Slack and email.</p>
+          <p>An MCP bridge into WhatsApp pulls chats and media so client conversations can be searched, summarized, and folded into the same operational memory as Slack and email.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1QtAPOYCRX25HTs5EGcqpuSFYtla_PSY4/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Research</span>
           <h3>Helium 10 MCP Integration</h3>
-          <p>A working MCP bridge into the Helium 10 suite, wired through a remote proxy with a scope override I worked out when the native route refused to authenticate, so keyword research, listing analysis, and profit data answer inside the same AI workflows as everything else.</p>
+          <p>A working MCP bridge into the Helium 10 suite runs through a remote proxy with a scope override I set up when the native route refused to authenticate, so keyword research, listing analysis, and profit data answer inside the same AI workflows as everything else.</p>
           <a class="card-link" href="https://drive.google.com/drive/folders/1o1Qiy029vGE-AHib0nXu20webPrG_Njg" target="_blank" rel="noopener">See the tool portfolio &rarr;</a>
         </div>
       </div>
@@ -133,43 +133,43 @@
       <div class="section-head reveal">
         <span class="eyebrow">Pipelines</span>
         <h2>Data and operations pipelines</h2>
-        <p class="lede">These run on schedules and turn raw activity into decisions, because the daily work of 15 to 20 accounts only stays consistent when the plumbing is code.</p>
+        <p class="lede">Scheduled runs turn raw activity into decisions, because the daily work of 15 to 20 accounts only stays consistent when the plumbing is code.</p>
       </div>
       <div class="cards-3">
         <div class="card reveal">
           <span class="tag">Operations Hub</span>
           <h3>Tasks Hub</h3>
-          <p>A task engine that watches Slack mentions across three workspaces, uses AI to decide accountability and extract the task, files it to Google Tasks, notifies me on Discord, and maintains a repository database of over 42,000 cross-channel work log rows that gives every new task its full account history.</p>
+          <p>A task engine watches Slack mentions across three workspaces, uses AI to decide accountability and extract the task, files it to Google Tasks, notifies me on Discord, and maintains a repository database of over 42,000 cross-channel work log rows that gives every new task its full account history.</p>
           <a class="card-link" href="https://drive.google.com/file/d/18bqK5bZCG_kQVYv7DXcT0mBcRsR-KRRC/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Forecasting</span>
           <h3>Forecast Tracking Sync</h3>
-          <p>The sync layer behind my 90 day per-account forecasts, keeping projections, actuals, and pacing in one sheet per account so every weekly report is measured against a written plan rather than a feeling.</p>
+          <p>This is the sync layer behind my 90 day per-account forecasts, keeping projections, actuals, and pacing in one sheet per account so every weekly report is measured against a written plan rather than a feeling.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1aErvGPiCEk5BBcxFHh0XuZjIFTOUqZSs/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Meetings</span>
           <h3>Krisp Meeting Pipeline</h3>
-          <p>A pipeline that takes meeting transcripts, extracts the action items with AI, and turns them into tracked tasks, because decisions made on calls used to evaporate and now they land in a queue with an owner.</p>
+          <p>A pipeline ingests meeting transcripts, extracts the action items with AI, and turns them into tracked tasks, because decisions made on calls used to evaporate and now they land in a queue with an owner.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1gVz44dSFr0MwNL3WgQcFrcL8cmk1baFe/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Meetings</span>
           <h3>Discord Meeting Recorder</h3>
-          <p>A Discord voice channel recorder that captures per-user audio to separate WAV tracks for clean transcription, built for the team calls that no meeting bot could join.</p>
+          <p>A Discord voice channel recorder captures per-user audio to separate WAV tracks for clean transcription, built for the team calls that no meeting bot could join.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1xT4-Aq_SeewBxkrChgdbE6tmojYWo4JX/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Rank Tracking</span>
           <h3>DataDive API Pipeline</h3>
-          <p>A client for the DataDive API that drives Rank Radar keyword tracking, pulls niche and ranking juice data, and writes the tracking sheets my ranking strategy runs on, because rank movements only matter when they land next to the spend that caused them.</p>
+          <p>A client for the DataDive API drives Rank Radar keyword tracking, pulls niche and ranking juice data, and writes the tracking sheets my ranking strategy runs on, because rank movements only matter when they land next to the spend that caused them.</p>
           <a class="card-link" href="https://drive.google.com/file/d/17NhaCdr284agIsyZHcrKu51iGxjkHvgW/view" target="_blank" rel="noopener">Download the pipeline source &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Marketplace Analytics</span>
           <h3>MerchantSpring API Client</h3>
-          <p>A reporting client for the MerchantSpring API running the full create, poll, and download flow, which feeds my ads team tracking sheets and the daily sales pulls behind several of the case studies on this site.</p>
+          <p>A reporting client for the MerchantSpring API runs the full create, poll, and download flow, which feeds my ads team tracking sheets and the daily sales pulls behind several of the case studies on this site.</p>
           <a class="card-link" href="https://drive.google.com/file/d/17NhaCdr284agIsyZHcrKu51iGxjkHvgW/view" target="_blank" rel="noopener">Download the pipeline source &rarr;</a>
         </div>
       </div>
@@ -181,25 +181,25 @@
       <div class="section-head reveal">
         <span class="eyebrow">Apps &amp; Extensions</span>
         <h2>Extensions and standalone apps</h2>
-        <p class="lede">Smaller builds that remove daily friction, and the open source engines that do the daily bid work live on <a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a> where the commit history is the audit trail.</p>
+        <p class="lede">Smaller builds that remove daily friction sit here, and the open source engines that do the daily bid work live on <a href="https://github.com/marcelo-coding" target="_blank" rel="noopener">GitHub</a> where the commit history is the audit trail.</p>
       </div>
       <div class="cards-3">
         <div class="card reveal">
           <span class="tag">Chrome Extension</span>
           <h3>Chrome Memory Saver</h3>
-          <p>A tab management extension that suspends idle tabs while keeping chosen service tabs alive, built because a working browser with two hundred tabs is a real operating condition and not a joke.</p>
+          <p>A tab management extension suspends idle tabs while keeping chosen service tabs alive, built because a working browser with two hundred tabs is a real operating condition and not a joke.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1_SBK3HTbMOqZ5CFpCQB7ZDzAIclTTfYC/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">App</span>
           <h3>Speech Coach</h3>
-          <p>A speaking practice app that records, transcribes, and scores delivery, which I built to sharpen the client facing half of the job because clear speech closes accounts as surely as clear reporting.</p>
+          <p>A speaking practice app records, transcribes, and scores delivery, which I built to sharpen the client facing half of the job because clear speech closes accounts as surely as clear reporting.</p>
           <a class="card-link" href="https://drive.google.com/file/d/1AEaYJylJdFlcfyDXFR6uLa5y8_10fSTv/view" target="_blank" rel="noopener">Download the source archive &rarr;</a>
         </div>
         <div class="card reveal">
           <span class="tag">Client Systems</span>
           <h3>Private client automations</h3>
-          <p>Beyond the public archives I run client specific systems that stay private by design, including hourly Prime event budget pipelines, DSP report writers, an inventory aware supply chain sync, and alerting bots, and each one is described in the case studies where its results show up.</p>
+          <p>Outside the public archives I run client specific systems that stay private by design, including hourly Prime event budget pipelines, DSP report writers, an inventory aware supply chain sync, and alerting bots, and each one is described in the case studies where its results show up.</p>
           <a class="card-link" href="case-studies.html" target="_blank" rel="noopener">See the results &rarr;</a>
         </div>
       </div>
@@ -212,8 +212,8 @@
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Next Step</span>
-        <h2>Want this kind of thinking on your account?</h2>
-        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <h2>Want this thinking on your account?</h2>
+        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and name what I would change first.</p>
         <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
       </div>
     </div>

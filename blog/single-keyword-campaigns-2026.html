@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why I Still Build Single Keyword Campaigns in 2026</title>
-  <meta name="description" content="Single keyword campaigns still win in 2026 because they make attribution unambiguous and turn bid management into deterministic rules software can run.">
+  <title>Why I still run single keyword campaigns in 2026</title>
+  <meta name="description" content="Single keyword campaigns still win in 2026 because they keep attribution unambiguous and make bid management a set of deterministic rules software can run.">
   <link rel="canonical" href="https://marcppc.dev/blog/single-keyword-campaigns-2026.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Why I Still Build Single Keyword Campaigns in 2026">
-  <meta property="og:description" content="Single keyword campaigns still win in 2026 because they make attribution unambiguous and turn bid management into deterministic rules software can run.">
+  <meta property="og:title" content="Why I still run single keyword campaigns in 2026">
+  <meta property="og:description" content="Single keyword campaigns still win in 2026 because they keep attribution clean and turn bid management into deterministic rules that software can run.">
   <meta property="og:url" content="https://marcppc.dev/blog/single-keyword-campaigns-2026.html">
   <meta property="og:image" content="https://marcppc.dev/images/blog-1.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,18 +133,18 @@
     <div class="page-hero-inner">
       <span class="eyebrow">Campaign Structure</span>
       <h1>Why I Still Build Single Keyword Campaigns in 2026</h1>
-      <p class="page-meta">Published July 12, 2026 &middot; By <strong>Marc Siblag</strong></p>
+      <p class="page-meta">By <strong>Marc Siblag</strong> · Published July 12, 2026</p>
     </div>
   </header>
 
   <article class="article">
     <img class="hero-img reveal" src="../images/blog-1.png" alt="Single keyword campaign structure illustration">
-    <p>The conventional wisdom in 2026 says that single keyword campaigns are a relic, that broad match plus Amazon's algorithm has made granular structure obsolete, and that anyone still isolating keywords is doing busywork. I manage advertising across a portfolio of brands for a living, and I still build single keyword campaigns for every term that matters, because the structure solves two problems that blended campaigns cannot touch.</p>
-    <p>The first problem is attribution clarity. When a campaign contains exactly one exact match keyword, every dollar of spend, every impression, every placement report, and every attributed order maps back to a single decision that I made. In a blended campaign the report tells me that forty targets shared the spend, and I am left inferring which one earned the sales, which is exactly the kind of inference that goes wrong quietly. In a SKAG structure the campaign report is the keyword report, so there is nothing left to untangle.</p>
-    <p>The second problem is that ambiguity kills automation. A bid rule pointed at a mixed campaign has to guess which target caused the outcome it is reacting to, and a rule that guesses is a rule I cannot trust with money. A bid rule pointed at a single keyword campaign acts on a fact. If this target has accumulated clicks with no orders, the rule cuts the bid, and there is no question about which product or which search intent it is punishing. That determinism is what lets me hand the daily work to software, and it is why I open sourced the engine that runs it at <a href="https://github.com/marcelo-coding/amazon-ads-skag-engine">github.com/marcelo-coding/amazon-ads-skag-engine</a>. The engine reads performance on a schedule and applies the same rule to the same situation every single time, which is a standard no human operator meets across two hundred campaigns.</p>
-    <p>A few launch conventions make the structure behave. I launch on fixed bids rather than the dynamic down only setting, because I want the resulting data to reflect the bid I chose instead of whatever Amazon discounted it to in each auction, and clean inputs are the whole point of the exercise. Every new campaign starts at ten dollars per day, which is enough for a single keyword to prove itself without letting any one term starve the rest of the account. Starting bids sit at the low end of Amazon's suggested range, because discovery should be cheap and the rules will raise a winner on their own.</p>
-    <p>The structure also needs hygiene to stay honest. When a search term proves itself inside a research campaign, it graduates into its own exact match campaign, and it gets negated back at the source in the same motion, so the term converts in exactly one place. Without that dedupe step the same query bleeds across campaigns and the attribution clarity I built the structure for evaporates.</p>
-    <p>The honest tradeoff is surface area. Single keyword campaigns multiply the number of objects you manage, and at portfolio scale nobody can review them all by hand, which is precisely why the structure and the automation have to arrive together. The campaigns make the data unambiguous, and the engine makes the workload irrelevant. People who abandoned SKAGs usually abandoned the manual labor, and I agree with them about the labor. I just kept the structure and deleted the human from the loop instead.</p>
+    <p>Conventional wisdom in 2026 calls single keyword campaigns a relic, says broad match plus Amazon's algorithm has made granular structure obsolete, and writes off anyone still isolating keywords as busywork. I run advertising across a portfolio of brands for a living, and I still build single keyword campaigns for every term that matters, because the structure solves two problems blended campaigns cannot touch.</p>
+    <p>Attribution clarity comes first. With one exact match keyword in a campaign, every dollar of spend, every impression, every placement report, and every attributed order ties back to a single decision I made. A blended campaign report shows that forty targets shared the spend, and I end up inferring which one earned the sales, which is exactly where quiet errors creep in. With a SKAG setup the campaign report is the keyword report, so nothing needs untangling.</p>
+    <p>Ambiguity also breaks automation. A bid rule aimed at a mixed campaign has to guess which target caused the outcome it is reacting to, and a rule that guesses is not one I trust with money. A bid rule aimed at a single keyword campaign acts on a fact. If this target racks up clicks with no orders, the rule cuts the bid, and there is no question about which product or which search intent it is punishing. That determinism lets me hand the daily work to software, and it is why I open sourced the engine that runs it at <a href="https://github.com/marcelo-coding/amazon-ads-skag-engine">github.com/marcelo-coding/amazon-ads-skag-engine</a>. The engine reads performance on a schedule and applies the same rule to the same situation every single time, which is a standard no human operator meets across two hundred campaigns.</p>
+    <p>Launch conventions make the structure behave. I launch on fixed bids rather than the dynamic down only setting, because I want the data to reflect the bid I chose instead of whatever Amazon discounted it to in each auction, and clean inputs are the point of the exercise. Every new campaign starts at ten dollars per day, which is enough for a single keyword to prove itself without letting any one term starve the rest of the account. Starting bids sit at the low end of Amazon's suggested range, because discovery should be cheap and the rules will raise a winner on their own.</p>
+    <p>Hygiene keeps the structure honest. When a search term proves itself inside a research campaign, it graduates into its own exact match campaign, and I negate it at the source in the same motion so the term converts in exactly one place. Skip that dedupe step and the same query bleeds across campaigns and the attribution clarity I built the structure for evaporates.</p>
+    <p>The tradeoff is surface area. Single keyword campaigns multiply the number of objects you manage, and at portfolio scale nobody can review them all by hand, which is why the structure and the automation have to ship together. The campaigns make the data unambiguous, and the engine makes the workload irrelevant. People who abandoned SKAGs usually abandoned the manual labor, and I agree about the labor. I kept the structure and removed the human from the loop instead.</p>
     <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
   </article>
 
@@ -157,20 +157,20 @@
       <div class="cards-3">
         <a class="card reveal" href="../blog/remarketing-first-amazon-dsp.html">
           <span class="tag">Amazon DSP</span>
-          <h3>A Remarketing First Doctrine for Amazon DSP</h3>
-          <p>I open every DSP flight with zero upper funnel spend, because display remarketing finishes sales that are already in motion.</p>
+          <h3>A remarketing first approach for Amazon DSP</h3>
+          <p>I start every DSP flight with zero upper funnel spend, because display remarketing finishes sales that are already in motion.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
         <a class="card reveal" href="../blog/bid-changes-as-code.html">
           <span class="tag">Automation</span>
-          <h3>The Bid Change You Make Every Day Should Be Code</h3>
-          <p>My tiered rules cut bleeders on click thresholds and anchor every new bid to the CPC the auction actually charged.</p>
+          <h3>The daily bid change should be code</h3>
+          <p>I run tiered rules that cut bleeders on click thresholds and anchor every new bid to the CPC the auction actually charged.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
         <a class="card reveal" href="../services/dev-automation.html">
           <span class="tag">Service</span>
           <h3>Dev and Automation</h3>
-          <p>I build the software that runs my accounts, so the daily bid changes fire as code against complete, current numbers.</p>
+          <p>I build the software that runs my accounts, so the daily bid changes execute as code against complete, current numbers.</p>
           <span class="card-link">See the engagement &rarr;</span>
         </a>
       </div>
@@ -183,8 +183,8 @@
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Next Step</span>
-        <h2>Want this kind of thinking on your account?</h2>
-        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <h2>Want this applied to your account?</h2>
+        <p>Book a free audit call and I will go through your campaigns live, show where the spend is leaking, and say what I would change first.</p>
         <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
       </div>
     </div>

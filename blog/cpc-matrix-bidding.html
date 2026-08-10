@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The CPC Matrix: Bid Steps Sized to What a Click Actually Costs</title>
-  <meta name="description" content="Flat percentage bid rules cut small bids too hard and big bids too gently. My CPC matrix sizes every step to the bid's own magnitude and converges faster.">
+  <title>The CPC Matrix: Bid Steps Sized To The Real Cost Of A Click</title>
+  <meta name="description" content="One flat percentage on every bid chops small bids and barely moves big ones. My CPC matrix sizes each step to the bid itself and converges faster.">
   <link rel="canonical" href="https://marcppc.dev/blog/cpc-matrix-bidding.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="The CPC Matrix: Bid Steps Sized to What a Click Actually Costs">
-  <meta property="og:description" content="Flat percentage bid rules cut small bids too hard and big bids too gently. My CPC matrix sizes every step to the bid's own magnitude and converges faster.">
+  <meta property="og:title" content="The CPC Matrix: Bid Steps Sized To The Real Cost Of A Click">
+  <meta property="og:description" content="A single percentage across all bids overcuts small bids and undercuts large ones. My CPC matrix sets each step to the bid&#x27;s own magnitude and converges faster.">
   <meta property="og:url" content="https://marcppc.dev/blog/cpc-matrix-bidding.html">
   <meta property="og:image" content="https://marcppc.dev/images/blog-cpc-matrix.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,21 +133,21 @@
     <div class="page-hero-inner">
       <span class="eyebrow">Automation</span>
       <h1>The CPC Matrix: Bid Steps Sized to What a Click Actually Costs</h1>
-      <p class="page-meta">Published August 6, 2026 &middot; By <strong>Marc Siblag</strong></p>
+      <p class="page-meta">By <strong>Marc Siblag</strong> · Published August 6, 2026</p>
     </div>
   </header>
 
   <article class="article">
     <img class="hero-img reveal" src="../images/blog-cpc-matrix.png" alt="CPC bid matrix illustration">
-    <p>After ten years in Amazon e-commerce and a desk that usually carries 15 to 20 accounts at once, the automation mistake I see most often is the flat percentage bid rule. One percentage applied to every bid sounds disciplined, but it cuts small bids too hard and big bids too gently, so the account never settles. The oversized cuts overshoot the profitable bid and force a correction the next cycle, the undersized cuts never arrive at the profitable bid at all, and the result is an account that oscillates instead of converging. I replaced the single percentage with a matrix that sizes every step to the bid's own magnitude, and this post is that table in full.</p>
-    <p>The table reads like this. Bids around $3 step down $0.30, bids around $2 step down $0.20, and bids around $1 step down $0.10. Below a dollar the step is $0.07, between $0.30 and $0.10 the step is $0.05, and between $0.10 and $0.07 the step is $0.02. Bids already sitting at $0.02 or $0.03 stay exactly where they are, because they have nothing left to give and cutting them further only produces noise in the change log.</p>
-    <p>Direction comes from one line, which is the account's ACOS target. On the account this table was built for that line sits at 25 percent, so every target running below the line walks up the table one step at a time, and every target running above it walks down. There is one override that ignores the line entirely: any enabled target with spend and zero sales walks down regardless of everything else, because a target with no sales has no ACOS to measure, and spend without sales is the one signal that never needs more context.</p>
-    <p>The reason proportional steps work is that the size of a sensible move scales with the bid itself. A $0.30 move on a $3 bid shifts auction position enough to produce a readable result by the next cycle, while that same $0.30 step applied to a bid near $0.30 would erase the bid entirely, which is exactly why that band steps down $0.05 instead. When every step is sized to what the bid can absorb, the account converges on its profitable bids within a handful of cycles and then holds there, instead of sawing back and forth across the target forever.</p>
-    <h3>Two caps that keep the matrix honest</h3>
-    <p>The first cap is the account's CPC max bid limit, which I set from the account's margin rather than from ambition. One of my accounts caps every bid at $1.56 and another caps at $3.00, because the two catalogs earn different margins and a bid ceiling is really a margin statement. No rule in the matrix is allowed to walk a bid above that number, so even a target on a hot streak cannot climb its way past what the unit economics can repay.</p>
-    <p>The second cap fires when a bid sits above the target's own realized CPC while sales are zero, and the action is simple: the bid gets set to the CPC. Your bid is a ceiling and the CPC is the truth of what the auction actually charges, so a bid well above its realized CPC with no orders is just an inflated ceiling on a keyword that has not earned one. Snapping the bid down to the realized CPC keeps the target live at the price the auction has proven it will charge, and it removes the headroom that one expensive day could otherwise spend.</p>
-    <p>There is one more input I apply on a schedule, which is Amazon's own suggested bid. On standard campaigns, refactored keyword campaigns, and search term harvest campaigns I periodically reset bids to the suggested bid minus 20 to 25 percent, because those campaigns exist to explore, and the suggestion is a decent map of the current auction once you discount it for Amazon's optimism. I never apply that reset to single keyword campaigns, because a SKAG bid is a rank position being defended rather than a number being optimized, and rank defense gets managed by hand.</p>
-    <p>None of this is exotic, and that is the point. A matrix of steps, one ACOS line, two caps, and a scheduled reset are enough to keep bids converging across 15 to 20 accounts at once, and the flagship accounts running this system hold TACoS under 15 percent. I have managed over $10M in ad spend on the belief that bidding is not a place for cleverness, so every rule above is boring on purpose, because boring rules behave the same way at three dollars as they do at three cents.</p>
+    <p>After ten years in Amazon e-commerce and a desk that usually carries 15 to 20 accounts at once, I see the same automation mistake more than any other: the flat percentage bid rule. One percentage on every bid looks tidy, but it cuts small bids too hard and big bids too gently, so the account never settles. The heavy cuts blow past the profitable bid and need a rebound the next cycle. The light cuts never reach the profitable bid at all. You get an account that oscillates instead of converging. I replaced the single percentage with a matrix that sizes every move to the bid's own magnitude, and this post prints that table in full.</p>
+    <p>Here is how the table runs. Bids around $3 step down $0.30, bids around $2 step down $0.20, and bids around $1 step down $0.10. Below a dollar the step is $0.07. Between $0.30 and $0.10 the step is $0.05, and between $0.10 and $0.07 the step is $0.02. Bids already sitting at $0.02 or $0.03 stay put, because they have nothing left to give and cutting them further only adds noise to the change log.</p>
+    <p>Direction comes from one line, the account's ACOS target. On the account this table was built for that line sits at 25 percent. Every target running below the line walks up the table one step at a time, and every target running above it walks down. One override ignores the line entirely: any enabled target with spend and zero sales walks down regardless, because a target with no sales has no ACOS to measure, and spend without sales is the one signal that never needs more context.</p>
+    <p>Proportional steps work because the size of a sensible move scales with the bid. A $0.30 move on a $3 bid shifts auction position enough to print a readable result by the next cycle, while that same $0.30 step applied to a bid near $0.30 would erase the bid, which is why that band steps down $0.05 instead. When every step matches what the bid can absorb, the account finds its profitable bids within a handful of cycles and then holds there, instead of sawing back and forth across the target forever.</p>
+    <h3>Two caps that keep the matrix straight</h3>
+    <p>Cap one is the account's CPC max bid limit, set from margin rather than ambition. One of my accounts caps every bid at $1.56 and another caps at $3.00, because the two catalogs earn different margins and a bid ceiling is a margin statement. No rule in the matrix may walk a bid above that number, so even a target on a hot streak cannot climb past what the unit economics can repay.</p>
+    <p>Cap two fires when a bid sits above the target's own realized CPC while sales are zero, and the action is simple: set the bid to the CPC. Your bid is a ceiling and the CPC is what the auction actually charges, so a bid well above its realized CPC with no orders is just an inflated ceiling on a keyword that has not earned one. Snapping the bid down to the realized CPC keeps the target live at the price the auction has proven it will charge, and it removes the headroom that one expensive day could otherwise spend.</p>
+    <p>One more input runs on a schedule: Amazon's suggested bid. On standard campaigns, refactored keyword campaigns, and search term harvest campaigns I periodically reset bids to the suggested bid minus 20 to 25 percent, because those campaigns exist to explore and the suggestion is a decent map of the current auction once you discount it for Amazon's optimism. I do not apply that reset to single keyword campaigns, because a SKAG bid defends rank rather than a number, and rank defense stays manual.</p>
+    <p>This is plain work by design. A matrix of steps, one ACOS line, two caps, and a scheduled reset keep bids converging across 15 to 20 accounts at once, and the flagship accounts on this system hold TACoS under 15 percent. I have managed over $10M in ad spend on the belief that bidding is not the place for cleverness, so every rule above is boring on purpose, because boring rules behave the same way at three dollars as they do at three cents.</p>
     <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
   </article>
 
@@ -160,20 +160,20 @@
       <div class="cards-3">
         <a class="card reveal" href="../blog/bid-changes-as-code.html">
           <span class="tag">Automation</span>
-          <h3>The Bid Change You Make Every Day Should Be Code</h3>
-          <p>Daily bid changes belong in code, because a policy with an author and a history beats a mood at the keyboard.</p>
+          <h3>Daily Bid Changes Belong In Code</h3>
+          <p>Put daily bid changes in code, because a policy with an author and a history beats a mood at the keyboard.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
         <a class="card reveal" href="../blog/single-keyword-campaigns-2026.html">
           <span class="tag">Campaign Structure</span>
-          <h3>Why I Still Build Single Keyword Campaigns in 2026</h3>
-          <p>Single keyword campaigns make attribution unambiguous and turn bid management into rules that software can run.</p>
+          <h3>Why I Still Build Single Keyword Campaigns In 2026</h3>
+          <p>Single keyword campaigns keep attribution clean and turn bid management into rules software can run.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
         <a class="card reveal" href="../blog/remarketing-first-amazon-dsp.html">
           <span class="tag">Amazon DSP</span>
-          <h3>A Remarketing First Doctrine for Amazon DSP</h3>
-          <p>I open every DSP flight with zero upper funnel spend, because display remarketing finishes sales that are already in motion.</p>
+          <h3>A Remarketing First Doctrine For Amazon DSP</h3>
+          <p>I open every DSP flight with zero upper funnel spend, because display remarketing finishes sales already in motion.</p>
           <span class="card-link">Read the post &rarr;</span>
         </a>
       </div>
@@ -186,8 +186,8 @@
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Next Step</span>
-        <h2>Want this kind of thinking on your account?</h2>
-        <p>Book a free audit call and I will walk through your campaigns live, point out where the spend is leaking, and tell you what I would change first.</p>
+        <h2>Do you want this bid matrix on your account?</h2>
+        <p>Book a free audit call and I will walk your campaigns live, show where the spend is leaking, and name the first change I would make.</p>
         <a class="btn" href="https://calendly.com/marcfreelance0319/amazon-ppc-expert-interview" target="_blank" rel="noopener">Book a free audit call</a>
       </div>
     </div>
