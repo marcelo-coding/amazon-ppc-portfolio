@@ -1418,3 +1418,29 @@ p{max-width:65ch;}
 /* Inline testimonial playback */
 .vt-poster video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;background:#000;display:block;}
 .vt-card.is-playing{cursor:default;}
+
+/* Services page animated illustrations */
+.svc-art{width:100%;max-width:280px;height:auto;display:block;margin:18px 0 6px;}
+.sa-bar{transform-origin:left center;animation:saGrow 2.6s ease-in-out infinite alternate;}
+.sa-b2{animation-delay:.3s;}.sa-b3{animation-delay:.6s;}.sa-b4{animation-delay:.9s;}
+@keyframes saGrow{0%{transform:scaleX(.25);}45%,100%{transform:scaleX(1);}}
+.sa-check{stroke-dasharray:101;stroke-dashoffset:101;animation:saDraw 2.6s ease infinite alternate;}
+.sa-tick{stroke-dasharray:26;stroke-dashoffset:26;animation:saDraw 2.6s .5s ease infinite alternate;}
+@keyframes saDraw{40%{stroke-dashoffset:0;}100%{stroke-dashoffset:0;}}
+.sp-bar{transform-origin:center bottom;transform-box:fill-box;animation:spRise 3s ease-in-out infinite alternate;}
+.sp-r2{animation-delay:.15s;}.sp-r3{animation-delay:.3s;}.sp-r4{animation-delay:.45s;}.sp-r5{animation-delay:.6s;}
+@keyframes spRise{0%{transform:scaleY(.3);}50%,100%{transform:scaleY(1);}}
+.sp-line{stroke-dasharray:300;stroke-dashoffset:300;animation:spDraw 3s ease-in-out infinite alternate;}
+@keyframes spDraw{35%{stroke-dashoffset:0;}100%{stroke-dashoffset:0;}}
+.sp-dot{animation:spPulse 1.6s ease-in-out infinite;}
+@keyframes spPulse{0%,100%{opacity:.5;r:5;}50%{opacity:1;r:7;}}
+.dv-code{transform-origin:left center;animation:dvType 3.2s ease infinite;}
+.dv-c2{animation-delay:.35s;}.dv-c3{animation-delay:.7s;}.dv-c4{animation-delay:1.05s;}
+@keyframes dvType{0%{transform:scaleX(0);}30%,100%{transform:scaleX(1);}}
+.dv-cursor{animation:dvBlink 1s steps(1) infinite;}
+@keyframes dvBlink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+.dv-gear{transform-origin:212px 92px;transform-box:view-box;animation:dvSpin 7s linear infinite;}
+@keyframes dvSpin{to{transform:rotate(360deg);}}
+.service-child-cards .card{transition:transform .25s ease,box-shadow .25s ease;}
+.service-child-cards .card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(35,47,62,.14);}
+

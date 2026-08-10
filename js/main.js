@@ -3,7 +3,7 @@
 (function () {
   "use strict";
 
-  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reducedMotion = false; /* animations forced on, the OS reduce flag was hiding every reveal and particle */
 
   var boot = function () {
     /* ---------------- Sticky nav scrolled state ---------------- */
