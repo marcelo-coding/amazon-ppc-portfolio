@@ -38,6 +38,19 @@
       }
     }
 
+    /* ---------------- Phase cycler for ops widgets ---------------- */
+
+    document.querySelectorAll("[data-cycle]").forEach(function (w) {
+      var phases = parseInt(w.getAttribute("data-cycle"), 10) || 2;
+      var ms = parseInt(w.getAttribute("data-cycle-ms"), 10) || 2500;
+      var i = 0;
+      w.classList.add("ph0");
+      window.setInterval(function () {
+        i = (i + 1) % phases;
+        for (var k = 0; k < phases; k++) w.classList.toggle("ph" + k, k === i);
+      }, ms);
+    });
+
     /* ---------------- Scroll reveal ---------------- */
 
     /* Auto-tag inner page content so article pages animate without markup edits.
