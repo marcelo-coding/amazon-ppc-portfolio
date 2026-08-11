@@ -1643,3 +1643,4 @@ p{max-width:65ch;}
 .mo-row4 .mo-name{font-size:11.5px;}
 .mo-head.mo-row4 span{text-align:right;}
 .mo-head.mo-row4 span:first-child{text-align:left;}
+.brand-inline-label{margin:34px 0 14px;font-size:.85rem;letter-spacing:.02em;color:var(--text-muted,#5a6572);text-transform:uppercase;}
