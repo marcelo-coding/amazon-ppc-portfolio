@@ -1632,3 +1632,8 @@ p{max-width:65ch;}
 .mo-tick{font-variant-numeric:tabular-nums;text-align:right;min-width:88px;display:inline-block;}
 .mo-loss{color:#B01F70;font-weight:700;}
 .mo-gain{color:#007600;font-weight:700;}
+
+/* rolling counters */
+.mo-count{font-variant-numeric:tabular-nums;min-width:46px;display:inline-block;text-align:right;}
+.mo-count.mo-counting{color:#0f1111;font-weight:700;}
+.mo-arrow.on{opacity:1;transition:opacity .25s ease;}
