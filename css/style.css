@@ -1486,3 +1486,4 @@ p{max-width:65ch;}
 .preview-card:hover .thumb{transform:scale(1.07) rotate(.4deg);animation-play-state:paused;}
 @keyframes kenburns{0%{transform:scale(1) translateX(0);}100%{transform:scale(1.08) translateX(-8px);}}
 .article .hero-img{animation:kenburns 16s ease-in-out infinite alternate;}
+.car-track.marquee{scroll-snap-type:none;scroll-behavior:auto;}

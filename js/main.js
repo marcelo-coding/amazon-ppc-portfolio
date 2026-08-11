@@ -250,6 +250,29 @@
         });
       }
 
+      if (track.classList.contains("marquee")) {
+        /* Continuous drift: clone the card set once for a seamless loop. */
+        var kids = Array.prototype.slice.call(track.children);
+        kids.forEach(function (k) { track.appendChild(k.cloneNode(true)); });
+        var half = function () { return track.scrollWidth / 2; };
+        var paused = false;
+        carousel.addEventListener("mouseenter", function () { paused = true; });
+        carousel.addEventListener("mouseleave", function () { paused = false; });
+        carousel.addEventListener("touchstart", function () { paused = true; }, { passive: true });
+        carousel.addEventListener("touchend", function () {
+          window.setTimeout(function () { paused = false; }, 4000);
+        }, { passive: true });
+        var drift = function () {
+          if (!paused) {
+            track.scrollLeft += 0.6;
+            if (track.scrollLeft >= half()) track.scrollLeft -= half();
+          }
+          window.requestAnimationFrame(drift);
+        };
+        window.requestAnimationFrame(drift);
+        return;
+      }
+
       if (!reducedMotion) {
         var timer = null;
         var startAuto = function () {
