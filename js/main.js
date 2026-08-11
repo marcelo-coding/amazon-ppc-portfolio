@@ -87,7 +87,9 @@
           if (t < HOLD) { v = from; }
           else if (t < HOLD + RUN) { v = from + (to - from) * ease((t - HOLD) / RUN); }
           else { v = to; done = true; }
-          el.textContent = "$" + v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          var pre = el.hasAttribute("data-prefix") ? el.getAttribute("data-prefix") : "$";
+          var suf = el.getAttribute("data-suffix") || "";
+          el.textContent = pre + v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + suf;
           var arrow = el.parentElement.querySelector(".mo-arrow");
           if (arrow && !arrow.classList.contains("mo-hold-dash")) {
             arrow.classList.toggle("on", t >= HOLD);

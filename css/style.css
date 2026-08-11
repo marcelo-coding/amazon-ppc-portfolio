@@ -1606,8 +1606,8 @@ p{max-width:65ch;}
 .mo-page .mo-crow{display:flex;justify-content:space-between;padding:4px 0;font-variant-numeric:tabular-nums;}
 .mo-page .mo-total{border-top:1.5px solid #0f1111;margin-top:3px;padding-top:6px;font-weight:700;}
 .mo-pl{position:absolute;inset:10px 12px;opacity:0;}
-.mo-calc2.ph3 .mo-unit,.mo-calc2.ph4 .mo-unit,.mo-calc2.ph5 .mo-unit{opacity:0;}
-.mo-calc2.ph3 .mo-pl,.mo-calc2.ph4 .mo-pl,.mo-calc2.ph5 .mo-pl{opacity:1;}
+.mo-calc2.ph1 .mo-unit{opacity:0;}
+.mo-calc2.ph1 .mo-pl{opacity:1;}
 .mo-plv{position:relative;display:inline-block;min-width:80px;text-align:right;}
 .mo-plv span{transition:opacity .4s ease;}
 .mo-plv .mo-p2,.mo-plv .mo-p3{position:absolute;inset:0;opacity:0;}
@@ -1637,3 +1637,9 @@ p{max-width:65ch;}
 .mo-count{font-variant-numeric:tabular-nums;min-width:46px;display:inline-block;text-align:right;}
 .mo-count.mo-counting{color:#0f1111;font-weight:700;}
 .mo-arrow.on{opacity:1;transition:opacity .25s ease;}
+.mo-row4{display:grid;grid-template-columns:1.35fr .62fr .72fr .78fr;gap:6px;align-items:center;}
+.mo-row4 .mo-cell{justify-content:flex-end;}
+.mo-row4 .mo-count{min-width:0;font-size:11.5px;}
+.mo-row4 .mo-name{font-size:11.5px;}
+.mo-head.mo-row4 span{text-align:right;}
+.mo-head.mo-row4 span:first-child{text-align:left;}
