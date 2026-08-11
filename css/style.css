@@ -1570,8 +1570,8 @@ p{max-width:65ch;}
 .mo-s3{animation:moStep 6s 3.2s ease infinite;}
 .mo-l1::after{animation:moLine 6s .8s ease infinite;}
 .mo-l2::after{animation:moLine 6s 2.4s ease infinite;}
-@keyframes moStep{0%{color:#aab7b8;}12%,88%{color:#146EB4;}100%{color:#aab7b8;}}
-@keyframes moLine{0%{transform:scaleX(0);}14%,86%{transform:scaleX(1);}100%{transform:scaleX(0);}}
+@keyframes moStep{0%,2%{color:#aab7b8;}6%,22%{color:#146EB4;}27%,100%{color:#aab7b8;}}
+@keyframes moLine{0%{transform:scaleX(0);}10%,18%{transform:scaleX(1);}24%,100%{transform:scaleX(0);}}
 
 /* Phased ops animations */
 .mo-cleanup .mo-row,.mo-reinvest .mo-row{max-height:34px;overflow:hidden;transition:max-height .5s ease,opacity .5s ease,padding .5s ease;}
