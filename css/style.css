@@ -1487,3 +1487,18 @@ p{max-width:65ch;}
 @keyframes kenburns{0%{transform:scale(1) translateX(0);}100%{transform:scale(1.08) translateX(-8px);}}
 .article .hero-img{animation:kenburns 16s ease-in-out infinite alternate;}
 .car-track.marquee{scroll-snap-type:none;scroll-behavior:auto;}
+
+/* Methodology step illustrations */
+.step-art{width:100%;max-width:210px;height:auto;display:block;margin:14px 0 10px;}
+.st-dash{stroke-dashoffset:70;animation:stDash 3s ease-in-out infinite alternate;}
+@keyframes stDash{45%{stroke-dashoffset:70;}100%{stroke-dashoffset:0;}}
+.st-cut{transform-origin:center bottom;transform-box:fill-box;animation:stCut 3.2s ease-in-out infinite;}
+@keyframes stCut{0%,35%{transform:scaleY(1);opacity:.5;}70%,100%{transform:scaleY(.12);opacity:.15;}}
+.st-x{animation:stX 3.2s ease-in-out infinite;opacity:0;}
+@keyframes stX{0%,35%{opacity:0;}55%,100%{opacity:1;}}
+.st-grow{transform-origin:center bottom;transform-box:fill-box;animation:spRise 3.2s ease-in-out infinite alternate;}
+.st-grow2{transform-origin:center bottom;transform-box:fill-box;animation:spRise 3.2s .4s ease-in-out infinite alternate;}
+.st-cycle{transform-origin:56px 68px;transform-box:view-box;animation:dvSpin 9s linear infinite;}
+.st-margin{transform-origin:center bottom;transform-box:fill-box;animation:stMargin 2.8s ease-in-out infinite alternate;}
+@keyframes stMargin{0%{transform:scaleY(.4);opacity:.5;}45%,100%{transform:scaleY(1);opacity:1;}}
+.st-day{animation:spPulse 1.8s ease-in-out infinite;}
