@@ -1533,13 +1533,13 @@ p{max-width:65ch;}
 .mo-swap{position:relative;display:inline-block;min-width:46px;text-align:right;}
 .mo-swap .mo-old,.mo-swap .mo-new{display:block;}
 .mo-swap .mo-new{position:absolute;inset:0;opacity:0;}
-.mo-swap .mo-old{animation:moOldFade 4s ease-in-out infinite;}
-.mo-swap .mo-new{animation:moNewFade 4s ease-in-out infinite;font-weight:700;}
+.mo-swap .mo-old{animation:moOldFade 4s steps(1,end) infinite;}
+.mo-swap .mo-new{animation:moNewFade 4s steps(1,end) infinite;font-weight:700;}
 .mo-up .mo-new{color:#007600;}
 .mo-down .mo-new{color:#B01F70;}
-@keyframes moOldFade{0%,40%{opacity:1;}55%,90%{opacity:0;}100%{opacity:1;}}
-@keyframes moNewFade{0%,40%{opacity:0;}55%,90%{opacity:1;}100%{opacity:0;}}
-.mo-arrow{font-size:9px;opacity:0;animation:moNewFade 4s ease-in-out infinite;}
+@keyframes moOldFade{0%,49%{opacity:1;}50%,99%{opacity:0;}100%{opacity:1;}}
+@keyframes moNewFade{0%,49%{opacity:0;}50%,99%{opacity:1;}100%{opacity:0;}}
+.mo-arrow{font-size:9px;opacity:0;animation:moNewFade 4s steps(1,end) infinite;}
 .mo-arrow-up{color:#007600;}
 .mo-arrow-down{color:#B01F70;}
 .mo-hold-dash{color:#aab7b8;opacity:1;animation:none;}
@@ -1624,3 +1624,11 @@ p{max-width:65ch;}
 .mo-l1::after{animation:moLine 8s .8s ease infinite;}
 .mo-l2::after{animation:moLine 8s 2.4s ease infinite;}
 .mo-steps .mo-step span{font-size:9.5px;}
+
+/* row-staggered switches and ticker colors */
+.mo-d1,.mo-d1 .mo-old,.mo-d1 .mo-new{animation-delay:.5s;}
+.mo-d2,.mo-d2 .mo-old,.mo-d2 .mo-new{animation-delay:1s;}
+.mo-d3,.mo-d3 .mo-old,.mo-d3 .mo-new{animation-delay:1.5s;}
+.mo-tick{font-variant-numeric:tabular-nums;text-align:right;min-width:88px;display:inline-block;}
+.mo-loss{color:#B01F70;font-weight:700;}
+.mo-gain{color:#007600;font-weight:700;}

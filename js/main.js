@@ -38,6 +38,35 @@
       }
     }
 
+    /* ---------------- P&L ticker: counts from red into green ---------------- */
+
+    var calc = document.querySelector(".mo-calc2");
+    if (calc) {
+      var rev = calc.querySelector('[data-role="rev"]');
+      var ads = calc.querySelector('[data-role="ads"]');
+      var prof = calc.querySelector('[data-role="profit"]');
+      var fmt = function (v) {
+        var sign = v < 0 ? "\u2212 $" : "$";
+        return sign + Math.round(Math.abs(v)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      };
+      var p = 0;
+      window.setInterval(function () {
+        if (calc.classList.contains("ph1")) {
+          p = Math.min(1, p + 0.022);
+        } else {
+          p = 0;
+        }
+        var revenue = 12000 * Math.pow(3912884 / 12000, p);
+        var adspend = revenue * 0.11;
+        var profit = revenue * 0.28 - 8000;
+        rev.textContent = fmt(revenue);
+        ads.textContent = "\u2212 " + fmt(adspend);
+        prof.textContent = fmt(profit);
+        prof.classList.toggle("mo-loss", profit < 0);
+        prof.classList.toggle("mo-gain", profit >= 0);
+      }, 90);
+    }
+
     /* ---------------- Phase cycler for ops widgets ---------------- */
 
     document.querySelectorAll("[data-cycle]").forEach(function (w) {
