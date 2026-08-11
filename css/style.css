@@ -1508,3 +1508,15 @@ p{max-width:65ch;}
 .brand-chip{flex:0 0 auto;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 22px;min-width:200px;box-shadow:0 4px 14px rgba(35,47,62,.06);}
 .bc-name{font-weight:700;color:var(--navy);font-size:1rem;white-space:nowrap;}
 .bc-cat{font-size:.8rem;color:var(--text-muted,#5a6572);margin-top:3px;white-space:nowrap;}
+
+/* Mini ad consoles in methodology cards */
+.adconsole-mini .ac-card{padding:12px 14px;box-shadow:none;}
+.adconsole-mini .ac-head{margin-bottom:6px;}
+.adconsole-mini .ac-title{font-size:.9rem;}
+.adconsole-mini .ac-range{font-size:.68rem;}
+.adconsole-mini .ac-tiles{gap:12px;margin-bottom:6px;}
+.adconsole-mini .ac-tile-label{font-size:.62rem;}
+.adconsole-mini .ac-tile-val{font-size:13px;}
+.adconsole-mini .ac-note{display:none;}
+.adconsole-mini .ac-expand,.adconsole-mini .ac-info{display:none;}
+.adconsole-mini{margin:12px 0 14px;}
