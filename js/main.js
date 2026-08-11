@@ -40,7 +40,23 @@
 
     /* ---------------- Scroll reveal ---------------- */
 
-    var revealEls = document.querySelectorAll(".reveal");
+    /* Auto-tag inner page content so article pages animate without markup edits.
+       Elements already carrying .reveal keep their authored behavior. */
+    var autoSel = [
+      ".article > h2", ".article > h3", ".article > h4", ".article > p",
+      ".article > ul", ".article > ol", ".article > blockquote",
+      ".article .stat-callout", ".article .adconsole", ".article .prodcar",
+      ".page-hero .eyebrow", ".page-hero h1", ".page-hero-inner > p"
+    ].join(",");
+    var autoIdx = 0;
+    document.querySelectorAll(autoSel).forEach(function (el) {
+      if (el.classList.contains("reveal")) return;
+      el.classList.add("reveal-auto");
+      el.style.transitionDelay = ((autoIdx % 4) * 0.07) + "s";
+      autoIdx++;
+    });
+
+    var revealEls = document.querySelectorAll(".reveal, .reveal-auto");
     if (revealEls.length && "IntersectionObserver" in window && !reducedMotion) {
       var io = new IntersectionObserver(
         function (entries) {
