@@ -69,14 +69,14 @@
 
     /* ---------------- Rolling number counters in ops cards ---------------- */
 
-    var counters = document.querySelectorAll(".mo-count");
-    if (counters.length) {
+    var opsCounters = document.querySelectorAll(".mo-count");
+    if (opsCounters.length) {
       var PERIOD = 5200, HOLD = 1400, RUN = 1300;
       var t0 = Date.now();
       var ease = function (x) { return 1 - Math.pow(1 - x, 3); };
       window.setInterval(function () {
         var now = Date.now();
-        counters.forEach(function (el) {
+        opsCounters.forEach(function (el) {
           var from = parseFloat(el.getAttribute("data-from"));
           var to = parseFloat(el.getAttribute("data-to"));
           var dec = parseInt(el.getAttribute("data-dec"), 10) || 0;
