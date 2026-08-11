@@ -1502,3 +1502,9 @@ p{max-width:65ch;}
 .st-margin{transform-origin:center bottom;transform-box:fill-box;animation:stMargin 2.8s ease-in-out infinite alternate;}
 @keyframes stMargin{0%{transform:scaleY(.4);opacity:.5;}45%,100%{transform:scaleY(1);opacity:1;}}
 .st-day{animation:spPulse 1.8s ease-in-out infinite;}
+
+/* Brand wall */
+.brand-track{gap:16px;}
+.brand-chip{flex:0 0 auto;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 22px;min-width:200px;box-shadow:0 4px 14px rgba(35,47,62,.06);}
+.bc-name{font-weight:700;color:var(--navy);font-size:1rem;white-space:nowrap;}
+.bc-cat{font-size:.8rem;color:var(--text-muted,#5a6572);margin-top:3px;white-space:nowrap;}
