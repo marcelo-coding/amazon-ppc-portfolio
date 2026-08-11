@@ -1444,3 +1444,4 @@ p{max-width:65ch;}
 .service-child-cards .card{transition:transform .25s ease,box-shadow .25s ease;}
 .service-child-cards .card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(35,47,62,.14);}
 
+.svc-art-card{max-width:100%;margin:0 0 16px;}
