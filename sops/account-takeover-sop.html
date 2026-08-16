@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Takeover Standard Operating Procedure by Ad Astra</title>
+  <meta name="description" content="Our six step process for an Amazon ads account takeover, starting with the day 0 budget formula and moving through cleanup, reinvestment, and monthly reviews.">
+  <link rel="canonical" href="https://adastradigitalmarketing.tech/sops/account-takeover-sop.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Our Account Takeover SOP by Ad Astra">
+  <meta property="og:description" content="Six steps we use to take over an Amazon ads account, beginning at the day 0 budget formula and running through cleanup, reinvestment, and monthly reviews.">
+  <meta property="og:url" content="https://adastradigitalmarketing.tech/sops/account-takeover-sop.html">
+  <meta property="og:image" content="https://adastradigitalmarketing.tech/images/case-3.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect x='3' y='16' width='7' height='11' rx='2.5' fill='%23FF9900'/%3E%3Crect x='11.5' y='10' width='7' height='17' rx='2.5' fill='%23FF9900'/%3E%3Crect x='20' y='3' width='7' height='24' rx='2.5' fill='%23FF9900'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../css/style.css?v=43">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://adastradigitalmarketing.tech/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Account Takeover SOP"
+      }
+    ]
+  }
+  </script>
+  <!-- Microsoft Clarity: replace CLARITY_PROJECT_ID with your Clarity project id -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+        <span class="logo-text">AD<span class="logo-ppc">ASTRA</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li>
+          <a href="../services/">Services</a>
+          <ul class="nav-dropdown hidden-section">
+            <li><a href="../services/account-management.html">Amazon Account Management</a></li>
+            <li><a href="../services/ppc.html">Amazon PPC</a></li>
+            <li><a href="../services/dev-automation.html">Dev and Automation</a></li>
+            <li><a href="../tools.html">Tools we Have Built</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="../case-studies.html">Case Studies</a>
+          <ul class="nav-dropdown hidden-section">
+            <li><a href="../case-studies/vermont-smoke-and-cure.html">Vermont Smoke &amp; Cure</a></li>
+            <li><a href="../case-studies/digdefence-solutions.html">DigDefence Solutions</a></li>
+            <li><a href="../case-studies/swooc.html">SWOOC</a></li>
+            <li><a href="../case-studies/oak-antler-seasoning.html">Oak &amp; Antler Seasoning Company</a></li>
+            <li><a href="../case-studies/co2-lift.html">CO2 Lift</a></li>
+            <li><a href="../case-studies/giftlot.html">Giftlot</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="../blog.html">Blog</a>
+          <ul class="nav-dropdown">
+            <li><a href="../blog/topics/ppc-strategy.html">PPC Strategy</a></li>
+            <li><a href="../blog/topics/dsp.html">Amazon DSP</a></li>
+            <li><a href="../blog/topics/automation.html">Automation</a></li>
+            <li><a href="../blog.html">All Posts</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="../about/">About</a>
+          <ul class="nav-dropdown">
+            <li><a href="../about/our-story.html">Our Story</a></li>
+            <li><a href="../about/certifications.html">Certifications and Credentials</a></li>
+            <li><a href="../about/our-stack.html">Our Stack</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="mailto:Admin@adastradigitalmarketing.tech?subject=Amazon%20audit%20call" target="_blank" rel="noopener" class="btn btn-sm nav-cta">Book a Call</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="breadcrumbs-inner">
+      <a href="../index.html">Home</a>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current">Account Takeover SOP</span>
+    </div>
+  </nav>
+
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Standard Operating Procedure</span>
+      <h1>Account Takeover SOP</h1>
+      <p>This is the six step process we run on every Amazon advertising account takeover. We publish it so you can judge the operating system before you ever book a call.</p>
+    </div>
+  </header>
+
+  <article class="article">
+    <p>We run the same six steps every time, from a fast starting budget to a structured cleanup and into a permanent monthly rhythm. Each step exists because the last one produces the inputs the next one needs. Underspending an approved budget is a missed opportunity even when the ROAS looks good, so once efficiency is proven we shift from trimming spend to growing sales.</p>
+
+    <h3>Step 1: Budget and Guardrails</h3>
+    <p>The opening budget equals the last 30 days of ad spend plus 10 to 20 percent. We set it on the first call so we can start working the account immediately instead of waiting weeks for a perfect number. That 10 to 20 percent is intentional room to maneuver while we digest the account, and we state up front that this is a starting budget, not a lifetime budget.</p>
+    <p>We set the targets, not the brand. Most brands do not know their TACoS capacity, so asking them for a target creates failure. We ask for guardrails instead, meaning their willingness to spend and their margin constraints, and we use the fact that growth phase brands typically spend 25 to 30 percent of revenue on advertising as a useful anchor. From those guardrails and the account historicals we build the benchmarks and propose the targets.</p>
+    <p>Amazon is a last click platform. Upper funnel work will always look worse on ROAS because conversions credit the final click, usually a Sponsored Product ad. We do not judge funnel stages on ROAS alone, because bottom of funnel only converts as well as it does when top of funnel fills it.</p>
+
+    <h3>Step 2: Scoring and Forecast</h3>
+    <p>We score the account before we project anything, because the scores set the growth multiplier and the multiplier sets the forecast. The four PPC dimensions are ad spend, cost per click, conversion rate, and organic sales share. We work down a condition table from ten until the first matching condition, then combine the four into a composite. Any single score of two or below blocks growth regardless of the composite and goes into the written assumptions before anything else.</p>
+    <p>The composite determines how hard we lean into ad driven growth. A strong composite can justify a multiplier as high as 1.25 on forecasted sales, while a merely stable account earns something closer to 1.10. We build a 90 day account level forecast, then forecast the top ten products individually. For new products with no history we use a competitor proxy discounted by 20 to 30 percent. The sum of product forecasts must land within 10 percent of the account total or we go find the misestimated products.</p>
+    <p>The assumptions tab is the most important part of the forecast, because the forecast is conditional, not a promise. We write every must hold assumption with a status, so any miss traces to a specific broken assumption instead of turning into finger pointing.</p>
+
+    <h3>Step 3: 21 Day Cleanup</h3>
+    <p>The first 21 days are digestion. We clean the account and cut wasted spend, aiming for a lower TACoS with flat or growing sales. In parallel we map the campaign structure, how each campaign type actually behaves, where spend concentrates, and where the money bleeds. That knowledge is what makes later targets practical instead of theoretical.</p>
+    <p>Our TACoS health check at the account level is 15 to 25 percent, with consumables running higher. Stable brands usually sit around 15 to 18 percent and growth phase brands around 20 to 25 percent. We anchor accounts at 18 to 20 percent so a few TACoS points remain to play with. Budget freed from bleeder campaigns moves to stronger placements during this window rather than sitting idle.</p>
+
+    <h3>Step 4: Day 30 Reinvestment</h3>
+    <p>At roughly day 30 we show the efficiency win, then turn it into permission to scale. A lower TACoS is a one time victory. If we keep celebrating declining spend after month one, the brand learns we will not spend their money, and the lower number becomes the new expectation. Budgets behave like corporate budgets. Unused budgets get cut.</p>
+    <p>That day 30 conversation does three things. First, we confirm the true working budget, since onboarding budget was provisional. Then we lock the working TACoS guardrail, which becomes our standing permission to spend. Finally, every TACoS point we cut counts as earned experimentation budget, because a TACoS point saved is a TACoS point earned and those points are for scaling, testing, and upper funnel work, not for permanent cuts.</p>
+    <p>We keep the testing trail visible. When a single test fails we say exactly what we tried, that we shut it down, and when TACoS will normalize. Reports that claim everything is amazing on every call are what create distrust.</p>
+
+    <h3>Step 5: Product Profitability</h3>
+    <p>Account level TACoS flags whether there is a problem. Product level analysis shows where the mobility is, and inefficiency usually hides in the middle and deep catalog. We pull a product level profit report, flag every product losing money, and choose to optimize it, reduce its spend, or stop spending on it. Then we quantify the TACoS points recovered from the losers and move them to best sellers and high margin products, which grows sales while account level TACoS stays flat.</p>
+    <p>When cost of goods is missing we estimate it at roughly 40 percent of retail price, since most products are priced a bit over two times their cost. A product showing losses before cost of goods is even entered is an urgent flag because the real losses are worse. We also hunt for neglected winners, because a high margin best seller taking zero ad spend should not survive this review.</p>
+    <p>We work in margin dollars per unit. If a product clears nine dollars per unit after price, fees, and cost of goods, then nine dollars is the ceiling on what we can pay to acquire a customer. The goal is to operate as close to the accepted cost per customer as possible, not as far below it as possible.</p>
+
+    <h3>Step 6: Monthly Reviews and Event Playbooks</h3>
+    <p>The day 30 reassessment becomes the monthly review. By the third business day of each month we load the prior month’s actuals into the tracking sheet. A result within plus or minus 10 percent of forecast means the forecast holds, and anything outside that band gets investigated. We re score the PPC metrics on current data, and any score that moved by two or more points forces a re evaluation of the growth multiplier for the remaining forecast period. Adjustments hit only forward months so the original forecast stays visible for honest variance tracking.</p>
+    <p>Major shopping events run on a separate playbook layered over the monthly rhythm. Before an event like Prime Day we take a full bulksheet backup as the rollback artifact, identify top performers and deal products, re enable proven but paused campaigns at conservative bids and budgets, remove dayparting, and set account level budget caps. All increases are staged in advance, with a final readiness check locked before the event opens. During the event we work a daily cadence of monitoring, feeding winners, and cutting bleeders, with a mid event strategic review to set up the back half. After the event we reverse the elevated posture in stages using the event tracker as the source of truth, so the account returns to normal settings by plan instead of by memory.</p>
+
+    <p>Once the takeover is complete, the account moves to the permanent cadence in <a href="weekly-optimization-sop.html">Our weekly optimization SOP</a>, and the results from this process sit on the <a href="../case-studies.html">case studies page</a>.</p>
+    <a class="back-link" href="../index.html#process">&larr; Back to the process overview</a>
+  </article>
+
+  <section class="section section-dark cta-band">
+    <div class="orb orb-orange" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Next Step</span>
+        <h2>Want this process on your account?</h2>
+        <p>Book a free audit call and we will walk your campaigns live, show where the spend is leaking, and state what we would change first.</p>
+        <a class="btn" href="mailto:Admin@adastradigitalmarketing.tech?subject=Amazon%20audit%20call" target="_blank" rel="noopener">Book a free audit call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">
+          <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="16" width="7" height="11" rx="2.5" fill="#FF9900"/><rect x="11.5" y="10" width="7" height="17" rx="2.5" fill="#FF9900"/><rect x="20" y="3" width="7" height="24" rx="2.5" fill="#FF9900"/></svg>
+          <span class="logo-text">AD<span class="logo-ppc">ASTRA</span></span>
+        </a>
+        <p class="footer-tagline">Amazon Ads Director running PPC, DSP, and the automation that protects margin.</p>
+        <a href="mailto:Admin@adastradigitalmarketing.tech">Admin@adastradigitalmarketing.tech</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/account-management.html">Amazon Account Management</a></li>
+          <li><a href="../services/ppc.html">Amazon PPC</a></li>
+          <li><a href="../services/dev-automation.html">Dev and Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../tools.html">Tools</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="account-takeover-sop.html">Account Takeover SOP</a></li>
+          <li><a href="weekly-optimization-sop.html">Weekly Optimization SOP</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1o1Qiy029vGE-AHib0nXu20webPrG_Njg" target="_blank" rel="noopener">Tool Archive</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work With Us</h4>
+        <a class="btn btn-sm" href="mailto:Admin@adastradigitalmarketing.tech?subject=Amazon%20audit%20call" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Ad Astra. Built for Amazon sellers.
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=19"></script>
+</body>
+</html>
