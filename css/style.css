@@ -1,13 +1,13 @@
 /* ============================================================
    marcppc.dev — main stylesheet
-   Navy #232F3E / #1a222d, Amazon orange #FF9900, system fonts
+   Navy #232F3E / #1a222d, Amazon orange #671EBA, system fonts
    ============================================================ */
 
 :root{
   --navy:#232F3E;
   --navy-deep:#1a222d;
-  --orange:#FF9900;
-  --orange-soft:rgba(255,153,0,.12);
+  --orange:#671EBA;--brand-blue:#0A6CD0;--brand-grad:linear-gradient(100deg,#0A6CD0,#671EBA);
+  --orange-soft:rgba(103,30,186,.12);
   --white:#fff;
   --ink:#232F3E;
   --muted:#5b6672;
@@ -1564,7 +1564,7 @@ p{max-width:65ch;}
 .mo-step svg{width:26px;height:26px;}
 .mo-step span{font-size:10px;white-space:nowrap;}
 .mo-link{flex:1;height:2px;background:#e7e9e9;position:relative;overflow:hidden;}
-.mo-link::after{content:"";position:absolute;inset:0;background:#FF9900;transform:scaleX(0);transform-origin:left;}
+.mo-link::after{content:"";position:absolute;inset:0;background:#671EBA;transform:scaleX(0);transform-origin:left;}
 .mo-s1{animation:moStep 6s ease infinite;}
 .mo-s2{animation:moStep 6s 1.6s ease infinite;}
 .mo-s3{animation:moStep 6s 3.2s ease infinite;}
@@ -1644,3 +1644,9 @@ p{max-width:65ch;}
 .mo-head.mo-row4 span{text-align:right;}
 .mo-head.mo-row4 span:first-child{text-align:left;}
 .brand-inline-label{margin:34px 0 14px;font-size:.85rem;letter-spacing:.02em;color:var(--text-muted,#5a6572);text-transform:uppercase;}
+
+/* Ad Astra brand */
+.logo-img{height:26px;width:auto;display:block;}
+.btn{background:var(--brand-grad);}
+.btn:hover{filter:brightness(1.12);}
+.hl{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
