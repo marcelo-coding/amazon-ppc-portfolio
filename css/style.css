@@ -1707,3 +1707,29 @@ a{color:#4D9FFF;}
 .process-step .step-num{background:var(--brand-grad);color:#fff;}
 .btn{border:0;}
 .icon-tile{width:64px;height:64px;border-radius:16px;object-fit:cover;display:block;margin-bottom:4px;box-shadow:0 6px 18px rgba(10,108,208,.25);}
+
+/* ============ Type and color system rebuild ============ */
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#090D18;color:#A6AFC3;font-size:16.5px;}
+h1,h2,h3,h4,.metric,.num,.book-title,.ac-title,.bc-name{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-0.015em;}
+.hero h1{font-size:clamp(2.7rem,5vw,4.3rem);line-height:1.04;font-weight:700;}
+.section-head h2,.page-hero h1{font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.12;}
+.section{background:#090D18;padding-top:96px;padding-bottom:96px;}
+.section-tint{background:#0D1322;}
+.hero,.stats-band,.breadcrumbs{background:#090D18;}
+.footer{background:#070B14;}
+.cred-bar{background:#0D1322;}
+.card,.preview-card,.process-step,.brand-chip,.vt-card{background:#101828;border:1px solid rgba(255,255,255,.06);border-radius:16px;}
+.book-card{background:#101828;border-color:rgba(110,168,255,.18);border-radius:18px;}
+a{color:#6EA8FF;}
+.accent,.metric .accent,.card-link{color:#6EA8FF;}
+.card-link:hover{color:#9D6BFF;}
+.eyebrow{color:#6EA8FF;letter-spacing:.14em;font-weight:600;font-size:.78rem;}
+.tag{background:rgba(110,168,255,.1);color:#8FBAFF;font-weight:500;}
+.hero-pill{border-color:rgba(110,168,255,.35);color:#8FBAFF;background:rgba(110,168,255,.05);}
+.section-head .lede,.article p,.article li,.card p,.process-step p{color:#8B93A7;line-height:1.7;}
+.section h2,.section h3,.article h2,.article h3,.card h3,.preview-card .metric,.process-step h3{color:#EEF1F8;}
+.btn{border-radius:10px;font-weight:600;letter-spacing:.01em;}
+.btn-glow{animation:none;box-shadow:0 6px 24px rgba(70,110,255,.35);}
+.nav{background:rgba(9,13,24,.82);}
+.nav-links a{font-weight:500;}
+.stat-callout{border-radius:12px;}
