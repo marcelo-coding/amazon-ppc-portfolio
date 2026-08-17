@@ -249,7 +249,7 @@
             var d = Math.sqrt(dx * dx + dy * dy);
             if (d < LINK_DIST) {
               ctx.strokeStyle =
-                "rgba(255,153,0," + ((1 - d / LINK_DIST) * 0.14).toFixed(3) + ")";
+                "rgba(157,107,255," + ((1 - d / LINK_DIST) * 0.14).toFixed(3) + ")";
               ctx.lineWidth = 1;
               ctx.beginPath();
               ctx.moveTo(particles[a].x, particles[a].y);
@@ -262,7 +262,7 @@
         for (var j = 0; j < particles.length; j++) {
           var q = particles[j];
           ctx.fillStyle = q.orange
-            ? "rgba(255,153,0," + q.alpha + ")"
+            ? "rgba(157,107,255," + q.alpha + ")"
             : "rgba(255,255,255," + q.alpha + ")";
           ctx.beginPath();
           ctx.arc(q.x, q.y, q.r, 0, Math.PI * 2);

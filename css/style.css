@@ -1,6 +1,6 @@
 /* ============================================================
    marcppc.dev — main stylesheet
-   Navy #232F3E / #1a222d, Amazon orange #671EBA, system fonts
+   Navy #232F3E / #1a222d, Ad Astra violet #671EBA, system fonts
    ============================================================ */
 
 :root{
@@ -78,7 +78,7 @@ p{max-width:65ch;}
 }
 .btn:hover{
   transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(255,153,0,.35);
+  box-shadow:0 8px 24px rgba(157,107,255,.35);
   text-decoration:none;
 }
 .btn-ghost{
@@ -93,21 +93,21 @@ p{max-width:65ch;}
 }
 .btn-ghost:hover{
   border-color:var(--orange);
-  background:rgba(255,153,0,.08);
+  background:rgba(157,107,255,.08);
   text-decoration:none;
 }
 .btn-sm{padding:10px 20px;font-size:.9rem;}
 
 @keyframes ctaPulse{
-  0%,100%{box-shadow:0 0 18px rgba(255,153,0,.45);}
-  50%{box-shadow:0 0 42px rgba(255,153,0,.85);}
+  0%,100%{box-shadow:0 0 18px rgba(157,107,255,.45);}
+  50%{box-shadow:0 0 42px rgba(157,107,255,.85);}
 }
 .btn-glow{animation:ctaPulse 2s ease-in-out infinite;}
 .btn-glow:hover{
   animation:none;
-  box-shadow:0 0 48px rgba(255,153,0,.9);
+  box-shadow:0 0 48px rgba(157,107,255,.9);
 }
-.nav-cta{box-shadow:0 0 14px rgba(255,153,0,.35);}
+.nav-cta{box-shadow:0 0 14px rgba(157,107,255,.35);}
 
 /* ---------------- Sticky nav ---------------- */
 
@@ -208,9 +208,9 @@ p{max-width:65ch;}
   position:absolute;
   inset:-40%;
   background:
-    radial-gradient(600px 400px at 20% 30%, rgba(255,153,0,.16), transparent 60%),
+    radial-gradient(600px 400px at 20% 30%, rgba(157,107,255,.16), transparent 60%),
     radial-gradient(700px 500px at 80% 70%, rgba(64,120,192,.18), transparent 60%),
-    radial-gradient(500px 400px at 60% 10%, rgba(255,153,0,.08), transparent 55%);
+    radial-gradient(500px 400px at 60% 10%, rgba(157,107,255,.08), transparent 55%);
   animation:mesh 22s ease-in-out infinite alternate;
 }
 @keyframes mesh{
@@ -259,7 +259,7 @@ p{max-width:65ch;}
   letter-spacing:.12em;
   text-transform:uppercase;
   color:var(--orange);
-  border:1px solid rgba(255,153,0,.35);
+  border:1px solid rgba(157,107,255,.35);
   border-radius:999px;
   padding:6px 14px;
   margin-bottom:22px;
@@ -318,7 +318,7 @@ p{max-width:65ch;}
   height:72px;
   border-radius:50%;
   object-fit:cover;
-  border:2px solid rgba(255,153,0,.5);
+  border:2px solid rgba(157,107,255,.5);
   margin-bottom:16px;
 }
 .book-title{
@@ -358,7 +358,7 @@ p{max-width:65ch;}
 .orb-orange{
   top:-140px;
   left:-120px;
-  background:radial-gradient(circle at center, rgba(255,153,0,.10) 0%, transparent 65%);
+  background:radial-gradient(circle at center, rgba(157,107,255,.10) 0%, transparent 65%);
   animation:orbDriftA 20s ease-in-out infinite;
 }
 .orb-blue{
@@ -388,9 +388,9 @@ p{max-width:65ch;}
   position:absolute;
   inset:-40%;
   background:
-    radial-gradient(600px 400px at 20% 30%, rgba(255,153,0,.16), transparent 60%),
+    radial-gradient(600px 400px at 20% 30%, rgba(157,107,255,.16), transparent 60%),
     radial-gradient(700px 500px at 80% 70%, rgba(64,120,192,.18), transparent 60%),
-    radial-gradient(500px 400px at 60% 10%, rgba(255,153,0,.08), transparent 55%);
+    radial-gradient(500px 400px at 60% 10%, rgba(157,107,255,.08), transparent 55%);
   animation:mesh 22s ease-in-out infinite alternate;
 }
 .page-hero::after{
@@ -547,7 +547,7 @@ p{max-width:65ch;}
   padding-bottom:56px;
 }
 .stats-band .stat .lbl{color:rgba(255,255,255,.62);}
-.stats-band .stat-icon{background:rgba(255,153,0,.12);}
+.stats-band .stat-icon{background:rgba(157,107,255,.12);}
 
 /* ---------------- Cards ---------------- */
 
@@ -574,7 +574,7 @@ p{max-width:65ch;}
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 16px 40px rgba(35,47,62,.12);
-  border-color:rgba(255,153,0,.4);
+  border-color:rgba(157,107,255,.4);
 }
 .card:hover::before{transform:scaleX(1);}
 
@@ -632,7 +632,7 @@ p{max-width:65ch;}
 .process-step:hover{
   transform:translateY(-4px);
   box-shadow:0 16px 40px rgba(35,47,62,.12);
-  border-color:rgba(255,153,0,.4);
+  border-color:rgba(157,107,255,.4);
 }
 .process-step .step-num{
   width:40px;
@@ -676,7 +676,7 @@ p{max-width:65ch;}
   transition:border-color .2s ease, transform .2s ease;
 }
 .brand-chip:hover{
-  border-color:rgba(255,153,0,.5);
+  border-color:rgba(157,107,255,.5);
   transform:translateY(-2px);
 }
 .brand-chip-logo{
@@ -765,7 +765,7 @@ p{max-width:65ch;}
 }
 .repo-card:hover{
   transform:translateY(-4px);
-  border-color:rgba(255,153,0,.45);
+  border-color:rgba(157,107,255,.45);
   background:rgba(255,255,255,.08);
 }
 .repo-card h3{color:var(--white);margin-bottom:10px;}
@@ -799,7 +799,7 @@ p{max-width:65ch;}
   text-transform:uppercase;
   color:var(--orange);
   background:var(--orange-soft);
-  border:1px solid rgba(255,153,0,.35);
+  border:1px solid rgba(157,107,255,.35);
   border-radius:999px;
   padding:4px 12px;
   margin-bottom:12px;
@@ -1216,7 +1216,7 @@ p{max-width:65ch;}
   white-space:nowrap;
 }
 .nav-links .nav-dropdown a::after{display:none;}
-.nav-links .nav-dropdown a:hover{background:rgba(255,153,0,.12);color:var(--orange);}
+.nav-links .nav-dropdown a:hover{background:rgba(157,107,255,.12);color:var(--orange);}
 
 /* ---------------- Breadcrumbs ---------------- */
 
@@ -1399,7 +1399,7 @@ p{max-width:65ch;}
 .vt-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(35,47,62,.14);}
 .vt-poster{position:relative;aspect-ratio:4/5;background:var(--navy);overflow:hidden;}
 .vt-poster img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;}
-.vt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(255,153,0,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.35);}
+.vt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(157,107,255,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.35);}
 .vt-play::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;margin-left:4px;}
 .vt-body{padding:20px 24px 24px;}
 .vt-brand{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
@@ -1464,7 +1464,7 @@ p{max-width:65ch;}
 @media (max-width:820px){.page-hero-inner.has-art{grid-template-columns:1fr;}.hero-art{grid-column:1;grid-row:auto;justify-self:start;max-width:240px;}}
 
 /* Tool card icons */
-.tool-icon{width:46px;height:46px;border-radius:12px;background:rgba(255,153,0,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:14px;animation:iconFloat 3.4s ease-in-out infinite;}
+.tool-icon{width:46px;height:46px;border-radius:12px;background:rgba(157,107,255,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:14px;animation:iconFloat 3.4s ease-in-out infinite;}
 .tool-icon svg{width:24px;height:24px;}
 .card:nth-child(2) .tool-icon{animation-delay:.5s;}
 .card:nth-child(3) .tool-icon{animation-delay:1s;}
@@ -1477,7 +1477,7 @@ p{max-width:65ch;}
 .process-step .step-num{position:relative;}
 .process-step.reveal .step-num{transform:scale(.3);opacity:0;transition:transform .5s cubic-bezier(.34,1.56,.64,1) .15s,opacity .3s ease .15s;}
 .process-step.reveal.visible .step-num{transform:scale(1);opacity:1;}
-.process-step .step-num::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(255,153,0,.45);opacity:0;animation:numPulse 2.6s ease-out infinite;}
+.process-step .step-num::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(157,107,255,.45);opacity:0;animation:numPulse 2.6s ease-out infinite;}
 @keyframes numPulse{0%{transform:scale(.7);opacity:.7;}70%{transform:scale(1.25);opacity:0;}100%{opacity:0;}}
 
 /* Blog and case card image motion */
@@ -1688,3 +1688,21 @@ a{color:#9D6BFF;}
 .svc-art [fill="#232F3E"]{fill:#8FA0C0;}
 /* Amazon console widgets stay white on purpose: they imitate the ad console UI */
 .adconsole .ac-card,.mini-ops,.prodcar{box-shadow:0 10px 26px rgba(0,0,0,.45);}
+
+/* ============ Dark polish pass ============ */
+.nav{background:rgba(11,17,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);}
+.footer{background:#080D18;}
+.section-dark{background:#0F1728;}
+.hero{background:#0B1120;}
+.hero-pill{border-color:rgba(157,107,255,.4);color:#B58CFF;}
+.hero h1 .hl{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-mini-stats .num{color:#F2F5FA;}
+.hero-mini-stats .lbl{color:#96A2BA;}
+.book-card{background:#141C31;border:1px solid rgba(157,107,255,.25);}
+.cred-bar{background:#0F1728;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
+.stats-band{background:#0B1120;}
+.stats-band .num{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.card::before{background:var(--brand-grad);}
+.mo-steps,.mini-ops{border-radius:10px;}
+.process-step .step-num{background:var(--brand-grad);color:#fff;}
+.btn{border:0;}
