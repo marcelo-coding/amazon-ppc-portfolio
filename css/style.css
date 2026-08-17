@@ -1706,3 +1706,4 @@ a{color:#4D9FFF;}
 .mo-steps,.mini-ops{border-radius:10px;}
 .process-step .step-num{background:var(--brand-grad);color:#fff;}
 .btn{border:0;}
+.icon-tile{width:64px;height:64px;border-radius:16px;object-fit:cover;display:block;margin-bottom:4px;box-shadow:0 6px 18px rgba(10,108,208,.25);}
