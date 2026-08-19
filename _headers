@@ -1,0 +1,33 @@
+# Cloudflare Pages header rules.
+# Google's favicon crawl is a separate fetch from the page crawl, so the icon
+# responses are pinned explicitly here rather than left to content-type inference
+# on each deploy. Cache is a week, not a year, because the icon lives at a fixed
+# path and a change still has to reach browsers.
+
+/favicon.ico
+  Content-Type: image/vnd.microsoft.icon
+  Cache-Control: public, max-age=604800
+
+/favicon-48.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+/favicon-96.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+/apple-touch-icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+/icon-512.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+/sitemap.xml
+  Content-Type: application/xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
