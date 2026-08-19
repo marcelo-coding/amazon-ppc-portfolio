@@ -1773,3 +1773,10 @@ a,.accent,.metric .accent,.card-link{color:var(--brand-blue);}
 .svc-art-hero [stroke="#3a4553"]{stroke:#D6DAE1;}
 .svc-art-hero [fill="#2e3947"]{fill:#E7E9EE;}
 .hero-art{opacity:1;}
+
+/* ---- nav dropdown on the light theme ---- */
+.nav-links .nav-dropdown{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(16,24,40,.14);padding:8px;}
+.nav-links .nav-dropdown::before{background:#fff;border-color:var(--line);}
+.nav-links .nav-dropdown a{color:var(--ink);border-radius:9px;font-weight:500;}
+.nav-links .nav-dropdown a:hover{background:rgba(10,108,208,.08);color:var(--brand-blue);}
+.nav-toggle span{background:var(--ink);}
