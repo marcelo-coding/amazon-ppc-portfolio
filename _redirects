@@ -1,0 +1,5 @@
+# Cloudflare Pages 308-redirects any *.html URL to its extensionless form.
+# Google's site-verification fetcher requires the token file at the exact
+# .html URL, so this rewrites that one path to an extensionless twin with a
+# 200 instead of letting the automatic redirect fire.
+/googleb882d40d53023d62.html  /gsv-token  200

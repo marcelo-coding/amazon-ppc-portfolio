@@ -31,3 +31,9 @@
 /robots.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
+
+/googleb882d40d53023d62.html
+  Content-Type: text/html; charset=utf-8
+
+/gsv-token
+  Content-Type: text/html; charset=utf-8
